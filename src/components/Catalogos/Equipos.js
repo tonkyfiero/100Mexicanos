@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import clsx from 'clsx'
 
 import Select from 'react-select';
 
@@ -18,7 +19,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import TextField from '@material-ui/core/TextField';
+
 
 import BootstrapInput from '../shared/InputBoostrap';
 import { Container } from '@material-ui/core';
@@ -27,13 +28,27 @@ const useStyles = {
   root: {
     flexGrow: 1,
   },
+  ordenZ:{
+    zIndex:999
+  },
   tableWrapper: {
     maxHeight: 407,
     overflow: 'auto',
   },
+  margenTop:{
+    marginTop:10
+  },
   borde: {
     border: '1px solid red',
   },
+  tabla:{
+    color:'green',
+    '& th':{
+      fontSize:16,
+      backgroundColor:'blue',
+      color:'white'
+    }    
+  }
 };
 
 const cias = [{ value: 1, label: 'Schlumberger' }, { value: 2, label: 'Weatherford' }, { value: 3, label: 'PEMEX' }, { value: 4, label: 'Zapata' }, { value: 5, label: 'Latina' }];
@@ -57,8 +72,8 @@ class Equipos extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
-        <Grid item xs={12}>
+      <div className={clsx(classes.root)}>
+        <Grid item xs={12} className={clsx(classes.margenTop,classes.ordenZ)}>
           <Paper>
             <Grid container spacing={2}>
               <Grid container item xs={3} md={3} justify="center" alignItems="center">
@@ -78,19 +93,19 @@ class Equipos extends Component {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} className={classes.margenTop}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Paper className={classes.root}>
                 <div className={classes.tableWrapper}>
-                  <Table stickyHeader>
-                    <TableHead>
+                  <Table stickyHeader className={classes.tabla}>
+                    <TableHead >
                       <TableRow>
-                        <TableCell>Equipo</TableCell>
-                        <TableCell>Compañia</TableCell>
-                        <TableCell>Contrato</TableCell>
-                        <TableCell>HP</TableCell>
-                        <TableCell></TableCell>
+                        <TableCell >Equipo</TableCell>
+                        <TableCell >Compañia</TableCell>
+                        <TableCell >Contrato</TableCell>
+                        <TableCell >HP</TableCell>
+                        <TableCell ></TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
