@@ -88424,6 +88424,9 @@ var useStyles = {
   root: {
     flexGrow: 1
   },
+  ordenZ: {
+    zIndex: 5
+  },
   tableWrapper: {
     maxHeight: 407,
     overflow: 'auto'
@@ -88470,10 +88473,10 @@ var Equipos = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: (0, _clsx2.default)(classes.root, classes.margenTop) },
+        { className: (0, _clsx2.default)(classes.root) },
         _react2.default.createElement(
           _Grid2.default,
-          { item: true, xs: 12 },
+          { item: true, xs: 12, className: (0, _clsx2.default)(classes.margenTop, classes.ordenZ) },
           _react2.default.createElement(
             _Paper2.default,
             null,
@@ -88488,12 +88491,12 @@ var Equipos = function (_Component) {
               _react2.default.createElement(
                 _Grid2.default,
                 { item: true, xs: 3, md: 3 },
-                _react2.default.createElement(_reactSelect2.default, { options: cias, id: 'selectCias', placeholder: 'Compa\xF1ia' })
+                _react2.default.createElement(_reactSelect2.default, { options: cias, id: 'selectCias', placeholder: 'Compa\xF1ia', className: classes.ordenZ })
               ),
               _react2.default.createElement(
                 _Grid2.default,
                 { item: true, xs: 3, md: 3 },
-                _react2.default.createElement(_reactSelect2.default, { options: contratos, id: 'selectContratos', placeholder: 'Contrato', st: true })
+                _react2.default.createElement(_reactSelect2.default, { options: contratos, id: 'selectContratos', placeholder: 'Contrato', className: classes.ordenZ })
               ),
               _react2.default.createElement(
                 _Grid2.default,
@@ -88509,7 +88512,7 @@ var Equipos = function (_Component) {
         ),
         _react2.default.createElement(
           _Grid2.default,
-          { item: true, xs: 12 },
+          { item: true, xs: 12, className: (0, _clsx2.default)(classes.margenTop) },
           _react2.default.createElement(
             _Grid2.default,
             { container: true, spacing: 2 },
