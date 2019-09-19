@@ -1,51 +1,38 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Equipos from '../Catalogos/Equipos'
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 //css
-import "./App.css";
+import './App.css';
 
 //Material-UI
 
+
 //componentes
-import Layout from "../Layout";
+import Layout from '../Layout';
+import Equipos from '../Catalogos/Equipos';
+import Tuberias from '../Catalogos/Tuberias'
+import Campos from '../Catalogos/Campos'
+import Macroperas from '../Catalogos/Macroperas'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      open: true,
-      title:'home'      
-    };
-  }
-
-  handleSidebar = () => {
-    this.setState({
-      open: !this.state.open
-    });
-  };
-
-  setTitle = (texto) => {
-    this.setState({
-      title: texto
-    });
-  }
-
-  render() {
+const App = () => {
+  
     return (
       <div className="App">
         <div className="container">
           <Router>
-           <Layout>
-             <Equipos />
-           </Layout>
+            <Layout>
+              <Route exact path="/" component={() => <div>home page</div>} />
+              <Route path="/catalogos/equipos" component={Equipos} />
+              <Route path="/catalogos/tuberias" component={Tuberias} />
+              <Route path="/catalogos/campos" component={Campos} />
+              <Route path="/catalogos/macroperas" component={Macroperas} />
+            </Layout>
           </Router>
         </div>
       </div>
     );
   }
-}
 
 export default App;

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import clsx from 'clsx'
 
 
-class Tuberias extends Component {
+class Macroperas extends Component {
   render() {    
     return (
-      <h1>soy Tuberias REact</h1>
+      <h1>soy Macroperas REact</h1>
     );
   }
 }
 
-export default Tuberias;
+export default Macroperas;
