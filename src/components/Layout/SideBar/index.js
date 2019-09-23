@@ -51,6 +51,7 @@ const itemInitialState = [
       { nombre: 'Macroperas', Icon: ContactMailIcon, ruta: '/catalogos/macroperas' },
       { nombre: 'Tuberias', Icon: ContactMailIcon, ruta: '/catalogos/tuberias' },
       { nombre: 'Campos', Icon: ContactMailIcon, ruta: '/catalogos/campos' },
+      { nombre: 'Actividades', Icon: ContactMailIcon, ruta: '/catalogos/actividades' },
     ],
   },
 ];
@@ -108,44 +109,3 @@ const MyDrawer = withStyles(styles)(({ classes, variant, open, handleClose }) =>
 });
 
 export default MyDrawer;
-
-{
-  /* <List>
-      <ListItem
-        button
-        component={Link}
-        to="/equipos"
-        onClick={() => {
-          handleClose(false);
-        }}>
-        <ListItemText>Equipos</ListItemText>
-      </ListItem>
-      <ListItem
-        button
-        component={Link}
-        to="/tuberias"
-        onClick={() => {
-          handleClose(false);
-        }}>
-        <ListItemText>Tuberias</ListItemText>
-      </ListItem>
-      <ListItem
-        button
-        component={Link}
-        to="/campos"
-        onClick={() => {
-          handleClose(false);
-        }}>
-        <ListItemText>campos</ListItemText>
-      </ListItem>
-      <ListItem
-        button
-        component={Link}
-        to="/macroperas"
-        onClick={() => {
-          handleClose(false);
-        }}>
-        <ListItemText>Macroperas</ListItemText>
-      </ListItem>
-    </List> */
-}

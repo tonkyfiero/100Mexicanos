@@ -6,7 +6,8 @@ module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: "/"
     },
     devtool:'source-map',
     module: {
@@ -30,7 +31,8 @@ module.exports = {
         contentBase: path.join(__dirname,'public'),
         port: 9000,
         compress: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot:true
     },
     resolve:{
         extensions:['*','.js','.jsx']
