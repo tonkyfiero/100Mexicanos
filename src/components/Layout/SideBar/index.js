@@ -43,6 +43,12 @@ const itemInitialState = [
     expandido: false,
   },
   {
+    nombre: 'Agregar Intervencion',
+    Icon: InboxIcon,
+    ruta: '/actividadFisica',
+    expandido: false,
+  },  
+  {
     nombre: 'Catalogos',
     Icon: ContactsIcon,
     expandido: false,
