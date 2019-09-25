@@ -37263,35 +37263,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/@material-ui/icons/Check.js":
-/*!**************************************************!*\
-  !*** ./node_modules/@material-ui/icons/Check.js ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
-
-var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
-  d: "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-}), 'Check');
-
-exports.default = _default;
-
-/***/ }),
-
 /***/ "./node_modules/@material-ui/icons/ContactMail.js":
 /*!********************************************************!*\
   !*** ./node_modules/@material-ui/icons/ContactMail.js ***!
@@ -37438,35 +37409,6 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
   d: "M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
 }), 'ExpandMore');
-
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@material-ui/icons/GroupAdd.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/@material-ui/icons/GroupAdd.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
-
-var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
-  d: "M8 10H5V7H3v3H0v2h3v3h2v-3h3v-2zm10 1c1.66 0 2.99-1.34 2.99-3S19.66 5 18 5c-.32 0-.63.05-.91.14.57.81.9 1.79.9 2.86s-.34 2.04-.9 2.86c.28.09.59.14.91.14zm-5 0c1.66 0 2.99-1.34 2.99-3S14.66 5 13 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm6.62 2.16c.83.73 1.38 1.66 1.38 2.84v2h3v-2c0-1.54-2.37-2.49-4.38-2.84zM13 13c-2 0-6 1-6 3v2h12v-2c0-2-4-3-6-3z"
-}), 'GroupAdd');
 
 exports.default = _default;
 
@@ -37619,72 +37561,6 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
   d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
 }), 'Search');
-
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@material-ui/icons/Settings.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/@material-ui/icons/Settings.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
-
-var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
-  transform: "scale(1.2, 1.2)",
-  fill: "none",
-  d: "M0 0h20v20H0V0z"
-}), _react.default.createElement("path", {
-  transform: "scale(1.2, 1.2)",
-  d: "M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"
-})), 'Settings');
-
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@material-ui/icons/VideoLabel.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/@material-ui/icons/VideoLabel.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
-
-var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
-  fill: "none",
-  d: "M0 0h24v24H0V0z"
-}), _react.default.createElement("path", {
-  d: "M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H3V5h18v11z"
-})), 'VideoLabel');
 
 exports.default = _default;
 
@@ -91383,6 +91259,482 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
+/***/ "./src/components/ActividadFisica/FormIntervencion.js":
+/*!************************************************************!*\
+  !*** ./src/components/ActividadFisica/FormIntervencion.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var INITIAL_STATE_VALUES = {
+    validationControles: false,
+    selSigMov: null,
+    selPozos: null,
+    selResponsable: null,
+    selEq: null,
+    selClase: null,
+    inpQoP: null,
+    inpQoR: null,
+    datetimepicker1: null,
+    datetimepicker2: null
+};
+
+var FormAF = function (_Component) {
+    _inherits(FormAF, _Component);
+
+    function FormAF(props) {
+        _classCallCheck(this, FormAF);
+
+        var _this = _possibleConstructorReturn(this, (FormAF.__proto__ || Object.getPrototypeOf(FormAF)).call(this, props));
+
+        _this.getActividadFromInterv = function (datos) {
+            var aux = void 0;
+            var ClasificacionInt = datos.reduce(function (vAnt, vAct) {
+                if (vAnt.length == 0) {
+                    vAnt.push(vAct);
+                } else {
+                    if (aux.Clasificacion != vAct.Clasificacion) {
+                        vAnt.push(vAct);
+                    }
+                }
+                aux = vAct;
+                return vAnt;
+            }, []);
+
+            return ClasificacionInt;
+        };
+
+        _this.onFilterClases = function (data, stringKey, valor) {
+            var clases = data.filter(ToolsJson.filterByKeyValue.bind(_this, stringKey, valor));
+            return clases;
+        };
+
+        _this.onFormSubmit = function (evento) {
+
+            evento.preventDefault();
+
+            var _this$state = _this.state,
+                selActividad = _this$state.selActividad,
+                selPozos = _this$state.selPozos,
+                selSigMov = _this$state.selSigMov,
+                selResponsable = _this$state.selResponsable,
+                selEq = _this$state.selEq,
+                selClase = _this$state.selClase,
+                inpQoP = _this$state.inpQoP,
+                inpQoR = _this$state.inpQoR,
+                datetimepicker1 = _this$state.datetimepicker1,
+                datetimepicker2 = _this$state.datetimepicker2;
+
+            var bandera = false;
+
+            switch (selActividad) {
+                case 1:
+                    bandera = !!selPozos && !!selResponsable && !!selEq && !!selClase && !!datetimepicker1 && !!datetimepicker2;
+                    break;
+                case 2:
+                    bandera = !!selPozos && !!selResponsable && !!selClase && !!datetimepicker1 && !!datetimepicker2 && !!inpQoP && !!inpQoR;
+                    break;
+                case 3:
+                    bandera = !!selPozos && !!selResponsable && !!selEq && !!selClase && !!datetimepicker1 && !!datetimepicker2 && !!inpQoP && !!inpQoR;
+                    break;
+                case 4:
+                    bandera = !!selPozos && !!selResponsable && !!selEq && !!selClase && !!datetimepicker1 && !!datetimepicker2 && !!selSigMov && selSigMov !== selPozos;
+                    break;
+                case 5:
+                case 11:
+                    bandera = !!selPozos && !!selResponsable && !!selClase && !!datetimepicker1 && !!datetimepicker2 && !!inpQoP && !!inpQoR;
+                    break;
+                default:
+                    break;
+            }
+
+            if (bandera === false) {
+                if (selPozos === selSigMov) {
+                    alert('El siguiente movimiento debe ser diferente al pozo');
+                }
+                _this.setState({
+                    validationControles: true
+                });
+            } else {
+                var af_data = new POCO_AF(selPozos, selClase, selResponsable, datetimepicker1, datetimepicker2, datetimepicker2, datetimepicker2, datetimepicker2, 7, selSigMov, selEq, inpQoP, inpQoR, 1);
+                var options = {
+                    method: 'POST', // or 'PUT','DELETE','GET'
+                    body: JSON.stringify(af_data),
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    }
+                };
+                _this.props.fetchisLoading();
+                _this.props.fetchData('/CrearAF/addAF', options, itemsIsLoading, sendFetchDataSucces, itemsGetDataHasError);
+            }
+        };
+
+        _this.onChangeSelectActividad = function (optionSelected, nameControl) {
+
+            switch (optionSelected.value) {
+                case 1:
+                    _this.setState(_extends({
+                        banderaPer: true,
+                        banderaTer: false,
+                        banderaRMA: false,
+                        banderaRME: false,
+                        banderaBase: false,
+                        banderaTI: false,
+                        Clase: _this.onFilterClases(_this.props.data.Intervenciones, 'IdCatClasificacion', '1'),
+                        selActividad: optionSelected.value
+                    }, INITIAL_STATE_VALUES));
+                    _this.clearDataPickers();
+                    break;
+
+                case 2:
+                    _this.setState(_extends({
+                        banderaPer: false,
+                        banderaTer: true,
+                        banderaRMA: false,
+                        banderaRME: false,
+                        banderaBase: false,
+                        banderaTI: false,
+                        Clase: _this.onFilterClases(_this.props.data.Intervenciones, 'IdCatClasificacion', '2'),
+                        selActividad: optionSelected.value
+                    }, INITIAL_STATE_VALUES));
+                    _this.clearDataPickers();
+                    break;
+                case 3:
+                    _this.setState(_extends({
+                        banderaPer: false,
+                        banderaTer: false,
+                        banderaRMA: true,
+                        banderaRME: false,
+                        banderaBase: false,
+                        banderaTI: false,
+                        Clase: _this.onFilterClases(_this.props.data.Intervenciones, 'IdCatClasificacion', '3'),
+                        selActividad: optionSelected.value
+                    }, INITIAL_STATE_VALUES));
+                    _this.clearDataPickers();
+                    break;
+                case 4:
+                    _this.setState(_extends({
+                        banderaPer: false,
+                        banderaTer: false,
+                        banderaRMA: false,
+                        banderaRME: true,
+                        banderaBase: false,
+                        banderaTI: false,
+                        Clase: _this.onFilterClases(_this.props.data.Intervenciones, 'IdCatClasificacion', '4'),
+                        selActividad: optionSelected.value
+                    }, INITIAL_STATE_VALUES));
+                    _this.clearDataPickers();
+                    break;
+                case 5:
+                    _this.setState(_extends({
+                        banderaPer: false,
+                        banderaTer: false,
+                        banderaRMA: false,
+                        banderaRME: false,
+                        banderaBase: true,
+                        banderaTI: false,
+                        Clase: _this.onFilterClases(_this.props.data.Intervenciones, 'IdCatClasificacion', '5'),
+                        selActividad: optionSelected.value
+                    }, INITIAL_STATE_VALUES));
+                    _this.clearDataPickers();
+                    break;
+                case 11:
+                    _this.setState(_extends({
+                        banderaPer: false,
+                        banderaTer: false,
+                        banderaRMA: false,
+                        banderaRME: false,
+                        banderaBase: false,
+                        banderaTI: true,
+                        Clase: _this.onFilterClases(_this.props.data.Intervenciones, 'IdCatClasificacion', '11'),
+                        selActividad: optionSelected.value
+                    }, INITIAL_STATE_VALUES));
+                    _this.clearDataPickers();
+                    break;
+                default:
+                    break;
+            }
+        };
+
+        _this.onChangeSelectCatalogo = function (optionSelected, nameControl) {
+            _this.setState(_defineProperty({}, nameControl, optionSelected.value));
+        };
+
+        _this.onchangeInputs = function (evento) {
+            _this.setState(_defineProperty({}, evento.target.name, evento.target.value));
+        };
+
+        _this.state = {
+            Pozos: [],
+            Actividad: [],
+            Equipos: [],
+            Responsables: [],
+            Clase: [],
+            validationControles: false,
+            banderaPer: false,
+            banderaTer: false,
+            banderaRMA: false,
+            banderaRME: false,
+            banderaBase: false,
+            banderaTI: false,
+            selActividad: null,
+            selSigMov: null,
+            selPozos: null,
+            selResponsable: null,
+            selEq: null,
+            selClase: null,
+            inpQoP: null,
+            inpQoR: null,
+            datetimepicker1: null,
+            datetimepicker2: null
+        };
+        return _this;
+    }
+
+    _createClass(FormAF, [{
+        key: 'render',
+
+
+        // clearDataPickers = () => {
+        //     $('#datetimepicker1').data("DateTimePicker").clear()
+        //     $('#datetimepicker2').data("DateTimePicker").clear()
+        // }
+
+        // configurarPickers = () => {
+        //     $('#datetimepicker1').datetimepicker({
+        //         format: 'DD/MM/YYYY HH:mm'
+
+        //     }).on('dp.change', (e) => {
+        //         this.onchangeInputs(e)
+        //     })
+
+        //     $('#datetimepicker2').datetimepicker({
+        //         format: 'DD/MM/YYYY HH:mm'
+        //     }).on('dp.change', (e) => {
+        //         this.onchangeInputs(e)
+        //     })
+        // }
+
+        // showModal = () => {
+        //     $("#modalLoader2").modal();
+        // }
+        // hiddenModal = () => {
+        //     $("#modalLoader2").modal('hide');
+        // }
+
+
+        // componentDidMount() {
+        //     this.configurarPickers()        
+        // }
+
+
+        value: function render() {
+            var _state = this.state,
+                banderaBase = _state.banderaBase,
+                banderaPer = _state.banderaPer,
+                banderaRME = _state.banderaRME,
+                banderaTer = _state.banderaTer,
+                banderaRMA = _state.banderaRMA,
+                banderaTI = _state.banderaTI;
+            var _state2 = this.state,
+                validationControles = _state2.validationControles,
+                datetimepicker1 = _state2.datetimepicker1,
+                datetimepicker2 = _state2.datetimepicker2,
+                selActividad = _state2.selActividad,
+                selClase = _state2.selClase,
+                selEq = _state2.selEq,
+                selPozos = _state2.selPozos,
+                selSigMov = _state2.selSigMov,
+                selResponsable = _state2.selResponsable,
+                inpQoP = _state2.inpQoP,
+                inpQoR = _state2.inpQoR;
+
+
+            var actividadSel = banderaBase === true || banderaPer === true || banderaRME === true || banderaTer === true || banderaRMA === true || banderaTI === true;
+            var viewEquipo = banderaPer === true || banderaRME === true || banderaRMA === true;
+            var viewClase = banderaBase === true || banderaPer === true || banderaRME === true || banderaTer === true || banderaRMA === true || banderaTI === true;
+            var viewGasto = banderaBase === true || banderaRME === true || banderaTer === true || banderaRMA || banderaTI === true;
+            var viewSigMov = banderaRME === true;
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'div',
+                    { className: 'panel' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'panel-heading' },
+                        _react2.default.createElement(
+                            'h3',
+                            { className: 'panel-title' },
+                            'Crear Actividad Fisica'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'panel-body' },
+                        _react2.default.createElement(
+                            'form',
+                            { onSubmit: this.onFormSubmit },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'selActividad' },
+                                    'Actividad'
+                                ),
+                                _react2.default.createElement(SelectRNormal, { className: validationControles && selActividad === null ? 'error' : '', data: this.state.Actividad, id: 'selActividad', name: 'selActividad', label: 'Clasificacion', valor: 'IdCatClasificacion', onChangeSelectValue: this.onChangeSelectActividad })
+                            ),
+                            actividadSel === true ? _react2.default.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'selPozos' },
+                                    'Pozo'
+                                ),
+                                _react2.default.createElement(SelectR, { className: validationControles && selPozos === null ? 'error' : '', data: this.state.Pozos, name: 'selPozos', id: 'NombreCompleto', label: 'NombreCompleto', valor: 'IdCatPozos', onChangeSelectValue: this.onChangeSelectCatalogo })
+                            ) : _react2.default.createElement('span', null),
+                            viewEquipo === true ? _react2.default.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'selEq' },
+                                    'Equipo'
+                                ),
+                                _react2.default.createElement(SelectRNormal, { className: validationControles && selEq === null ? 'error' : '', data: this.state.Equipos, id: 'selEq', name: 'selEq', label: 'Equipo', valor: 'IdCatEquipos', onChangeSelectValue: this.onChangeSelectCatalogo })
+                            ) : _react2.default.createElement('span', null),
+                            actividadSel === true ? _react2.default.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'selResponsable' },
+                                    'Responsable'
+                                ),
+                                _react2.default.createElement(SelectRNormal, { className: validationControles && selResponsable === null ? 'error' : '', data: this.state.Responsables, id: 'selResponsable', name: 'selResponsable', label: 'Nombre', valor: 'IdPersona', onChangeSelectValue: this.onChangeSelectCatalogo })
+                            ) : _react2.default.createElement('span', null),
+                            viewClase === true ? _react2.default.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'selClase' },
+                                    'Clase'
+                                ),
+                                _react2.default.createElement(SelectRNormal, { className: validationControles && selClase === null ? 'error' : '', data: this.state.Clase, id: 'selClase', name: 'selClase', label: 'Intervencion', valor: 'IdCatIntervenciones', onChangeSelectValue: this.onChangeSelectCatalogo })
+                            ) : _react2.default.createElement('span', null),
+                            viewGasto === true ? _react2.default.createElement(
+                                'div',
+                                { id: 'contQos', className: 'form-group' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'inpQoP' },
+                                    'Qo Prog'
+                                ),
+                                _react2.default.createElement('input', { className: validationControles && inpQoP === null ? 'form-control error' : 'form-control', type: 'number', id: 'inpQoP', name: 'inpQoP', onChange: this.onchangeInputs }),
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'inpQoR' },
+                                    'Qo Real'
+                                ),
+                                _react2.default.createElement('input', { className: validationControles && inpQoR === null ? 'form-control error' : 'form-control', type: 'number', id: 'inpQoR', name: 'inpQoR', onChange: this.onchangeInputs })
+                            ) : _react2.default.createElement('span', null),
+                            _react2.default.createElement(
+                                'div',
+                                { id: 'contFechas', className: actividadSel ? 'form-group' : 'hiddenControl' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-sm-6' },
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'datetimepicker1' },
+                                        'Fecha inicio Mov Fisica Programa'
+                                    ),
+                                    _react2.default.createElement('input', { type: 'datetime', name: '', id: '' })
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-sm-6' },
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'datetimepicker2' },
+                                        'Fecha inicio Mov Fisica Real'
+                                    ),
+                                    _react2.default.createElement('input', { type: 'datetime', name: '', id: '' })
+                                )
+                            ),
+                            viewSigMov === true ? _react2.default.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'selSigMov' },
+                                    'Siguiente Movimiento'
+                                )
+                            ) : _react2.default.createElement('span', null),
+                            actividadSel === true ? _react2.default.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                _react2.default.createElement(
+                                    'button',
+                                    { type: 'submit', className: 'btn btn-primary' },
+                                    'Enviar'
+                                )
+                            ) : _react2.default.createElement('span', null)
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return FormAF;
+}(_react.Component);
+
+exports.default = FormAF;
+
+// const mapStateToProps = (state) => ({
+
+// })
+
+// const mapDispatchToProps = (dispatch) => ({
+//     fetchData: (url, options, callLoader, callSucces, callError) => dispatch(FetchData(url, options, callLoader, callSucces, callError)),
+//     fetchisLoading: () => {dispatch(itemsIsLoading(true))}  
+// })
+
+// export default connect(mapDispatchToProps, mapDispatchToProps)(FormAF)
+
+/***/ }),
+
 /***/ "./src/components/App/App.css":
 /*!************************************!*\
   !*** ./src/components/App/App.css ***!
@@ -91456,13 +91808,19 @@ var _Campos = __webpack_require__(/*! ../Catalogos/Campos */ "./src/components/C
 
 var _Campos2 = _interopRequireDefault(_Campos);
 
-var _FormSeguimiento = __webpack_require__(/*! ../Seguimiento/FormSeguimiento */ "./src/components/Seguimiento/FormSeguimiento.js");
+var _FormSeguimiento = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Seguimiento/FormSeguimiento'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 var _FormSeguimiento2 = _interopRequireDefault(_FormSeguimiento);
 
+var _FormIntervencion = __webpack_require__(/*! ../ActividadFisica/FormIntervencion */ "./src/components/ActividadFisica/FormIntervencion.js");
+
+var _FormIntervencion2 = _interopRequireDefault(_FormIntervencion);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//css
+//Material-UI
+
+//componentes
 var App = function App() {
   return _react2.default.createElement(
     _reactRouterDom.BrowserRouter,
@@ -91488,16 +91846,15 @@ var App = function App() {
           _react2.default.createElement(_reactRouterDom.Route, { path: '/catalogos/tuberias', component: _Tuberias2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/catalogos/campos', component: _Campos2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/catalogos/macroperas', component: _Macroperas2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/catalogos/actividades', component: _Actividades2.default })
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/catalogos/actividades', component: _Actividades2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/actividadFisica', component: _FormIntervencion2.default })
         )
       )
     )
   );
 };
 
-//Material-UI
-
-//componentes
+//css
 exports.default = App;
 
 /***/ }),
@@ -92768,6 +93125,11 @@ var itemInitialState = [{
   ruta: '/seguimiento',
   expandido: false
 }, {
+  nombre: 'Agregar Intervencion',
+  Icon: _Inbox2.default,
+  ruta: '/actividadFisica',
+  expandido: false
+}, {
   nombre: 'Catalogos',
   Icon: _Contacts2.default,
   expandido: false,
@@ -92926,375 +93288,6 @@ var Layout = function Layout(_ref) {
 };
 
 exports.default = Layout;
-
-/***/ }),
-
-/***/ "./src/components/Seguimiento/FormSeguimiento.js":
-/*!*******************************************************!*\
-  !*** ./src/components/Seguimiento/FormSeguimiento.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _styles = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-
-var _clsx3 = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-
-var _clsx4 = _interopRequireDefault(_clsx3);
-
-var _Stepper = __webpack_require__(/*! @material-ui/core/Stepper */ "./node_modules/@material-ui/core/esm/Stepper/index.js");
-
-var _Stepper2 = _interopRequireDefault(_Stepper);
-
-var _Step = __webpack_require__(/*! @material-ui/core/Step */ "./node_modules/@material-ui/core/esm/Step/index.js");
-
-var _Step2 = _interopRequireDefault(_Step);
-
-var _StepLabel = __webpack_require__(/*! @material-ui/core/StepLabel */ "./node_modules/@material-ui/core/esm/StepLabel/index.js");
-
-var _StepLabel2 = _interopRequireDefault(_StepLabel);
-
-var _Check = __webpack_require__(/*! @material-ui/icons/Check */ "./node_modules/@material-ui/icons/Check.js");
-
-var _Check2 = _interopRequireDefault(_Check);
-
-var _Settings = __webpack_require__(/*! @material-ui/icons/Settings */ "./node_modules/@material-ui/icons/Settings.js");
-
-var _Settings2 = _interopRequireDefault(_Settings);
-
-var _GroupAdd = __webpack_require__(/*! @material-ui/icons/GroupAdd */ "./node_modules/@material-ui/icons/GroupAdd.js");
-
-var _GroupAdd2 = _interopRequireDefault(_GroupAdd);
-
-var _VideoLabel = __webpack_require__(/*! @material-ui/icons/VideoLabel */ "./node_modules/@material-ui/icons/VideoLabel.js");
-
-var _VideoLabel2 = _interopRequireDefault(_VideoLabel);
-
-var _StepConnector = __webpack_require__(/*! @material-ui/core/StepConnector */ "./node_modules/@material-ui/core/esm/StepConnector/index.js");
-
-var _StepConnector2 = _interopRequireDefault(_StepConnector);
-
-var _Button = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Typography = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
-
-var _Typography2 = _interopRequireDefault(_Typography);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var QontoConnector = (0, _styles.withStyles)({
-  alternativeLabel: {
-    top: 10,
-    left: 'calc(-50% + 16px)',
-    right: 'calc(50% + 16px)'
-  },
-  active: {
-    '& $line': {
-      borderColor: '#784af4'
-    }
-  },
-  completed: {
-    '& $line': {
-      borderColor: '#784af4'
-    }
-  },
-  line: {
-    borderColor: '#eaeaf0',
-    borderTopWidth: 3,
-    borderRadius: 1
-  }
-})(_StepConnector2.default);
-
-var useQontoStepIconStyles = (0, _styles.makeStyles)({
-  root: {
-    color: '#eaeaf0',
-    display: 'flex',
-    height: 22,
-    alignItems: 'center'
-  },
-  active: {
-    color: '#784af4'
-  },
-  circle: {
-    width: 8,
-    height: 8,
-    borderRadius: '50%',
-    backgroundColor: 'currentColor'
-  },
-  completed: {
-    color: '#784af4',
-    zIndex: 1,
-    fontSize: 18
-  }
-});
-
-function QontoStepIcon(props) {
-  var classes = useQontoStepIconStyles();
-  var active = props.active,
-      completed = props.completed;
-
-
-  return _react2.default.createElement(
-    'div',
-    {
-      className: (0, _clsx4.default)(classes.root, _defineProperty({}, classes.active, active)) },
-    completed ? _react2.default.createElement(_Check2.default, { className: classes.completed }) : _react2.default.createElement('div', { className: classes.circle })
-  );
-}
-
-QontoStepIcon.propTypes = {
-  active: _propTypes2.default.bool,
-  completed: _propTypes2.default.bool
-};
-
-var ColorlibConnector = (0, _styles.withStyles)({
-  alternativeLabel: {
-    top: 22
-  },
-  active: {
-    '& $line': {
-      backgroundImage: 'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)'
-    }
-  },
-  completed: {
-    '& $line': {
-      backgroundImage: 'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)'
-    }
-  },
-  line: {
-    height: 3,
-    border: 0,
-    backgroundColor: '#eaeaf0',
-    borderRadius: 1
-  }
-})(_StepConnector2.default);
-
-var useColorlibStepIconStyles = (0, _styles.makeStyles)({
-  root: {
-    backgroundColor: '#ccc',
-    zIndex: 1,
-    color: '#fff',
-    width: 50,
-    height: 50,
-    display: 'flex',
-    borderRadius: '50%',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  active: {
-    backgroundImage: 'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
-    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)'
-  },
-  completed: {
-    backgroundImage: 'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)'
-  }
-});
-
-function ColorlibStepIcon(props) {
-  var _clsx2;
-
-  var classes = useColorlibStepIconStyles();
-  var active = props.active,
-      completed = props.completed;
-
-
-  var icons = {
-    1: _react2.default.createElement(_Settings2.default, null),
-    2: _react2.default.createElement(_GroupAdd2.default, null),
-    3: _react2.default.createElement(_VideoLabel2.default, null)
-  };
-
-  return _react2.default.createElement(
-    'div',
-    {
-      className: (0, _clsx4.default)(classes.root, (_clsx2 = {}, _defineProperty(_clsx2, classes.active, active), _defineProperty(_clsx2, classes.completed, completed), _clsx2)) },
-    icons[String(props.icon)]
-  );
-}
-
-ColorlibStepIcon.propTypes = {
-  active: _propTypes2.default.bool,
-  completed: _propTypes2.default.bool,
-  icon: _propTypes2.default.node
-};
-
-var useStyles = (0, _styles.makeStyles)(function (theme) {
-  return {
-    root: {
-      width: '90%'
-    },
-    button: {
-      marginRight: theme.spacing(1)
-    },
-    instructions: {
-      marginTop: theme.spacing(1),
-      marginBottom: theme.spacing(1)
-    }
-  };
-});
-
-var FormSeguimiento = function (_Component) {
-  _inherits(FormSeguimiento, _Component);
-
-  //   const classes = useStyles();
-  //   const [activeStep, setActiveStep] = React.useState(1);
-  //   const steps = getSteps();
-
-  function FormSeguimiento(props) {
-    _classCallCheck(this, FormSeguimiento);
-
-    var _this = _possibleConstructorReturn(this, (FormSeguimiento.__proto__ || Object.getPrototypeOf(FormSeguimiento)).call(this, props));
-
-    _this.getStepContent = function (step) {
-      switch (step) {
-        case 0:
-          return _react2.default.createElement(
-            'div',
-            null,
-            'soy opcion 1'
-          );
-        case 1:
-          return _react2.default.createElement(
-            'div',
-            null,
-            'soy opcion 2'
-          );
-        case 2:
-          return _react2.default.createElement(
-            'div',
-            null,
-            'soy opcion 3'
-          );
-        case 3:
-          return _react2.default.createElement(
-            'div',
-            null,
-            'soy opcion 4'
-          );
-        default:
-          return 'Paso desconocido';
-      }
-    };
-
-    _this.handleNext = function () {
-      _this.setState({ pasoActual: _this.state.pasoa + 1 });
-    };
-
-    _this.handleBack = function () {
-      _this.setState({ pasoActual: _this.state.pasoa - 1 });
-    };
-
-    _this.handleReset = function () {
-      _this.setState({ pasoActual: 0 });
-    };
-
-    _this.state = {
-      pasos: ['Select campaign settings', 'Create an ad group', 'Create an ad'],
-      pasoActual: 0
-    };
-    return _this;
-  }
-
-  _createClass(FormSeguimiento, [{
-    key: 'render',
-    value: function render() {
-      var _state = this.state,
-          pasoActual = _state.pasoActual,
-          pasos = _state.pasos;
-
-      return _react2.default.createElement(
-        'div',
-        { className: classes.root },
-        _react2.default.createElement(
-          _Stepper2.default,
-          { alternativeLabel: true, activeStep: pasoActual },
-          pasos.map(function (label) {
-            return _react2.default.createElement(
-              _Step2.default,
-              { key: label },
-              _react2.default.createElement(
-                _StepLabel2.default,
-                null,
-                label
-              )
-            );
-          })
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          pasoActual === pasos.length ? _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-              _Typography2.default,
-              { className: classes.instructions },
-              'All steps completed - you\'re finished'
-            ),
-            _react2.default.createElement(
-              _Button2.default,
-              { onClick: handleReset, className: classes.button },
-              'Reset'
-            )
-          ) : _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-              'div',
-              null,
-              getStepContent(activeStep)
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                _Button2.default,
-                { disabled: activeStep === 0, onClick: handleBack, className: classes.button },
-                'Back'
-              ),
-              _react2.default.createElement(
-                _Button2.default,
-                { variant: 'contained', color: 'primary', onClick: handleNext, className: classes.button },
-                activeStep === steps.length - 1 ? 'Finish' : 'Next'
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return FormSeguimiento;
-}(_react.Component);
-
-exports.default = (0, _styles.withStyles)(FormSeguimiento);
 
 /***/ }),
 

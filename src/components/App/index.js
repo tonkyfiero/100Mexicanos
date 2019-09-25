@@ -14,7 +14,7 @@ import Tuberias from '../Catalogos/Tuberias'
 import Actividades from '../Catalogos/Actividades'
 import Campos from '../Catalogos/Campos'
 import Seguimiento from '../Seguimiento/FormSeguimiento'
-import ActividadFisica from '../CrearIntervencion/FormIntervencion'
+import ActividadFisica from '../ActividadFisica/FormIntervencion'
 
 const App = () => {
   return (
