@@ -21,7 +21,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 
-import BootstrapInput from '../shared/InputBoostrap';
+
 import { Container } from '@material-ui/core';
 
 const useStyles = {
@@ -76,8 +76,7 @@ class Equipos extends Component {
         <Grid item xs={12} className={clsx(classes.margenTop,classes.ordenZ)}>
           <Paper>
             <Grid container spacing={2}>
-              <Grid container item xs={3} md={3} justify="center" alignItems="center">
-                <BootstrapInput />
+              <Grid container item xs={3} md={3} justify="center" alignItems="center">                
               </Grid>
               <Grid item xs={3} md={3}>
                 <Select options={cias} id="selectCias" placeholder="Compañia" className={classes.ordenZ} />
