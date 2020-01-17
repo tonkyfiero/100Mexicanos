@@ -43,3 +43,5 @@ module.exports = {
     }),
   ],
 };
+
+// Scaffold-DbContext "Server=WIN-IUGVN69007T;Database=SegPerforacion;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entidades

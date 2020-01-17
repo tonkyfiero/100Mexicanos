@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
   root: {
     marginLeft: '220px',
+    marginTop:'220px',
     padding: '20px 30px',
   },
 });
@@ -16,7 +17,7 @@ class Contenido extends Component {
   render() {
     return (
       <div>
-        <div id="contenido" >
+        <div id="contenido" style={{marginLeft:'300px',marginTop:'70px'}}>
           {routes.map((ruta, index) => (
             <Route key={index} path={ruta.path} exact={ruta.exact} component={ruta.component} />
           ))}

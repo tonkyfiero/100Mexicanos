@@ -11,7 +11,7 @@ const Menu = [
         { path: '/catalogos/equipos', title: 'Equipos' },
         { path: '/catalogos/pozos', title: 'Pozos' },
         { path: '/catalogos/macroperas', title: 'Macroperas' },
-        { path: '/catalogos/trayectorias', title: 'Trayectorias' }
+        { path: '/catalogos/actividades', title: 'Actividades' }
       ]
     },
     { path: '/seguimiento', icon: 'fa fa-hdd', title: 'Seguimiento',

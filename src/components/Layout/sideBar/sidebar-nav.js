@@ -55,7 +55,7 @@ class SidebarNav extends Component {
     super(props);
 
     this.state = {
-      active: -1,
+      activo: -1,
       clicked: -1,
     };
   }
@@ -66,12 +66,12 @@ class SidebarNav extends Component {
 
     if (this.state.clicked === -1 && match) {
       this.setState((state) => ({
-        active: -1,
+        activo: -1,
         clicked: 1,
       }));
     } else {
       this.setState((state) => ({
-        active: this.state.active === i ? -1 : i,
+        activo: this.state.activo === i ? -1 : i,
         clicked: 1,
       }));
     }
@@ -87,7 +87,7 @@ class SidebarNav extends Component {
             path={menu.path}
             exact={menu.exact}
             key={i}
-            children={({ match }) => <SidebarList data={menu} key={i} expand={(e) => this.handleExpand(e, i, match)} active={i === this.state.active} clicked={this.state.clicked} />}
+            children={({ match }) => <SidebarList data={menu} key={i} expand={(e) => this.handleExpand(e, i, match)} active={i === this.state.activo} clicked={this.state.clicked} />}
           />
         ))}
       </ul>

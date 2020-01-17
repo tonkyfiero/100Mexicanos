@@ -88,17 +88,17 @@ const useStyles = makeStyles({
   },
 });
 
-const SidebarList = ({ data,expand }) => {
+const SidebarList = ({ data,expand,active }) => {
   const classes = useStyles();
 
-  const [active, setActive] = useState(-1);
+  const [activo, setActivo] = useState(-1);
   const [clicked, setClicked] = useState(-1);
 
   const handleExpand = (e, i, match) => {
     e.preventDefault();
 
-    setActive(active === i ? -1 : i);
-    clicked(1);
+    setActivo(activo === i ? -1 : i);
+    setClicked(1);
   };
 
   var icon = data.icon && <i className={data.icon}></i>;
@@ -121,7 +121,7 @@ const SidebarList = ({ data,expand }) => {
       path={data.path}
       exact={data.exact}
       children={({ match }) => (
-        <li className={clsx(match && classes.activo)} >
+        <li className={clsx(match && classes.activo,active && 'expand')} >
           {data.children ? (
             <Link to={data.path} onClick={expand}>
               {caret} {badge} {img} {icon} {title}
@@ -132,8 +132,8 @@ const SidebarList = ({ data,expand }) => {
             </Link>
           )}
           {data.children && (
-            <ul className={classes.nav_Submenu}>
-              {data.children && data.children.map((submenu, i) => <SidebarList data={submenu} key={i} expand={(e) => handleExpand(e, i, match)} active={i === active} clicked={clicked} />)}
+            <ul className={clsx(classes.nav_Submenu,!active && classes.nav_Submenu_Close )} >
+              {data.children && data.children.map((submenu, i) => <SidebarList data={submenu} key={i} expand={(e) => handleExpand(e, i, match)} active={i === activo} clicked={clicked} />)}
             </ul>
           )}
         </li>

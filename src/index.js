@@ -7,6 +7,8 @@ import rootReducers from './redux/reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import App from './App/app';

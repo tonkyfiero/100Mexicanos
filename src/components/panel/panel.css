@@ -1,0 +1,52 @@
+.panel {
+    margin-bottom: 20px;
+    background: #fff;
+    border: 0;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.panel.panel-inverse>.panel-heading {
+    background: #08021b;
+    color: #fff
+}
+
+.panel .panel-heading {
+    padding: 10px 15px;
+    border: 0;
+    flex: 1 1;
+    flex-wrap: nowrap;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.panel .panel-heading .panel-title {
+    line-height: 20px;
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: inherit;
+    flex: 1 1;
+}
+
+.panel .panel-heading, .panel .panel-heading .panel-heading-btn {
+    display: flex;
+    align-items: center;
+}
+
+.panel .panel-heading .panel-heading-btn .btn-icon {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.panel .panel-body {
+    padding: 15px;
+}
