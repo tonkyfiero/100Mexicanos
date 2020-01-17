@@ -2,7 +2,7 @@ import React from 'react'
 import { Redirect } from 'react-router'
 
 
-import Equipos from '../pages/Catalogos/Equipos'
+import Equipos from '../pages/Catalogos/Equipos/indexEquipos'
 import Equipos_CreUp from '../pages/Catalogos/Equipos/CreUp'
 
 import Actividades from '../pages/Catalogos/Actividades'
