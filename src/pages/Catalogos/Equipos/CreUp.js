@@ -5,10 +5,7 @@ const CreUp = () => {
     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
       <div className="section-block" id="basicform">
         <h3 className="section-title">Crear Equipo</h3>
-        <p>Formulario para crear equipos</p>
-        <button class="btn btn-secondary btn-space" type="button">
-          <i class="fas fa-plus"></i>
-        </button>
+        <p>Formulario para crear equipos</p>        
       </div>
       <div className="card">
         <h5 className="card-header">Formulario equipos</h5>
@@ -54,11 +51,11 @@ const CreUp = () => {
               </label>
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-space" type="submit">
-                <i class="icon s7-mail"></i>
+              <button class="btn btn-primary" type="submit">
+                <i class="icon s7-mail"></i>Enviar
               </button>
-              <button class="btn btn-secondary btn-space" type="button">
-                <i class="icon s7-close"></i>
+              <button class="btn btn-primary btn-danger m-r-2" type="button">
+                <i class="icon s7-close"></i>Cancelar
               </button>
             </div>
           </form>

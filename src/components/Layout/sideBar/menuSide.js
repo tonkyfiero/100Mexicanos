@@ -9,13 +9,18 @@ const Menu = [
     { path: '/catalogos', icon: 'fa fa-hdd', title: 'Catalogos',
       children: [
         { path: '/catalogos/equipos', title: 'Equipos' },
-        { path: '/catalogos/pozos', title: 'Pozos' },
+        { path: '/catalogos/tuberias', title: 'Tuberias' },
         { path: '/catalogos/macroperas', title: 'Macroperas' },
-        { path: '/catalogos/actividades', title: 'Actividades' }
+        { path: '/catalogos/operaciones', title: 'Operaciones' },
+        { path: '/catalogos/campos', title: 'Campos' },
+        { path: '/catalogos/pozos', title: 'Pozos' }
+        
       ]
     },
     { path: '/seguimiento', icon: 'fa fa-hdd', title: 'Seguimiento',
       children: [
+        { path: '/seguimiento/actividad', title: 'Actividad' },
+        { path: '/seguimiento/bitacora', title: 'Bitacora' },
         { path: '/seguimiento/direccional', title: 'Direccional' },
         { path: '/seguimiento/operativo', title: 'Operativo' },
         { path: '/seguimiento/costos', title: 'Costos' },        

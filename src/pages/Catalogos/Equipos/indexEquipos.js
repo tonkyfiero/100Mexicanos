@@ -21,7 +21,7 @@ const IndexEquipos = () => {
     <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
       <div className="card">
         <div className={classes.titulo}>
-          <h5 className="card-header" style={{flex:'7'}}>Formulario equipos</h5>
+          <h5 className="card-header" style={{flex:'7'}}>Equipos</h5>
           <button className="btn btn-secondary btn-space"  style={{flex:'1'}} type="button">
             <i className="fas fa-plus"></i>
           </button>

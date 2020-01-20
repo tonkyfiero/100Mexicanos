@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import { PageSettings } from '../config/page-settings';
+import { connect } from 'react-redux'
+
+///acciones redux
+
+import { getDataIni } from '../redux/actions/FetchFunctions'
+
+
 
 //css
 import './App.css';
@@ -19,11 +26,16 @@ class App extends Component {
       }));
     };
 
+    
     this.state = {
       prueba: true,
 
       handlePrueba: this.handlePrueba,
     };
+  }
+
+  componentDidMount(){
+    this.props.getCatalogos()
   }
 
   render() {
@@ -39,4 +51,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({})
+const mapDispatchToProps = dispatch => ({
+  getCatalogos : () => dispatch(getDataIni())
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(App)
