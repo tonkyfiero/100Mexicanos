@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PageSettings } from '../config/page-settings';
-import { connect } from 'react-redux'
+
 
 ///acciones redux
 
@@ -34,9 +34,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount(){
-    this.props.getCatalogos()
-  }
+ 
 
   render() {
     return (
@@ -51,9 +49,5 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({})
-const mapDispatchToProps = dispatch => ({
-  getCatalogos : () => dispatch(getDataIni())
-})
 
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+export default App
