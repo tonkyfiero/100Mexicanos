@@ -16,65 +16,67 @@ const useStyles = makeStyles({
 const IndexCampos = () => {
   const classes = useStyles();
   return (
-    <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
-      <div className="card">
-        <div className={classes.titulo}>
-          <h5 className="card-header" style={{ flex: '7' }}>
-            Campos
-          </h5>
-          <button className="btn btn-secondary btn-space" style={{ flex: '1' }} type="button">
-            <i className="fas fa-plus"></i>
-          </button>
-        </div>
-        <div className="card-body">
-          <div className="table-responsive">
-            <table className="table table-striped m-b-0">
-              <thead>
-                <tr>
-                  <th>Campos</th>
-                  <th>Siglas</th>
-                  <th width="1%"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Furbero</td>
-                  <td>Fur</td>
-                  <td className="with-btn" nowrap="">
-                    <a href="#" className="btn btn-primary width-60 ">
-                      <i className="fas fa-edit"></i>
-                    </a>
-                    <a className="btn btn-primary btn-danger m-r-2">
-                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Coapechaca</td>
-                  <td>Coap</td>
-                  <td className="with-btn" nowrap="">
-                    <a href="#" className="btn btn-primary width-60 ">
-                      <i className="fas fa-edit"></i>
-                    </a>
-                    <a className="btn btn-primary btn-danger m-r-2">
-                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Remolino</td>
-                  <td>Rem</td>
-                  <td className="with-btn" nowrap="">
-                    <a href="#" className="btn btn-primary width-60 ">
-                      <i className="fas fa-edit"></i>
-                    </a>
-                    <a className="btn btn-primary btn-danger m-r-2">
-                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+    <div className="row justify-content-md-center">
+      <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+        <div className="card">
+          <div className={classes.titulo}>
+            <h5 className="card-header" style={{ flex: '7' }}>
+              Campos
+            </h5>
+            <button className="btn btn-secondary btn-space" style={{ flex: '1' }} type="button">
+              <i className="fas fa-plus"></i>
+            </button>
+          </div>
+          <div className="card-body">
+            <div className="table-responsive">
+              <table className="table table-striped m-b-0">
+                <thead>
+                  <tr>
+                    <th>Campos</th>
+                    <th>Siglas</th>
+                    <th width="1%"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Furbero</td>
+                    <td>Fur</td>
+                    <td className="with-btn" nowrap="">
+                      <a href="#" className="btn btn-primary width-60 ">
+                        <i className="fas fa-edit"></i>
+                      </a>
+                      <a className="btn btn-primary btn-danger m-r-2">
+                        <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Coapechaca</td>
+                    <td>Coap</td>
+                    <td className="with-btn" nowrap="">
+                      <a href="#" className="btn btn-primary width-60 ">
+                        <i className="fas fa-edit"></i>
+                      </a>
+                      <a className="btn btn-primary btn-danger m-r-2">
+                        <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Remolino</td>
+                    <td>Rem</td>
+                    <td className="with-btn" nowrap="">
+                      <a href="#" className="btn btn-primary width-60 ">
+                        <i className="fas fa-edit"></i>
+                      </a>
+                      <a className="btn btn-primary btn-danger m-r-2">
+                        <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

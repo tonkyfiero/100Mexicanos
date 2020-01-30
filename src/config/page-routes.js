@@ -25,7 +25,12 @@ import Pozos_CreUp from '../pages/Catalogos/Pozos/CreUp'
 ///seguimiento
 import Actividad from '../pages/Seguimiento/ActividadFisica/CreUpAF'
 
-import DashboardV1 from '../pages/format'
+
+//dashboards 
+
+import Principal from '../pages/Dashboards/Principal/principal'
+
+
 
 
 
@@ -35,6 +40,16 @@ const routes = [
         exact:true,
         component: () => <Redirect to='/' />
     },   
+    {
+        path:'/dashboard/principal',
+        exact:'true',
+        title:'Principal',
+        component: () => <Principal />
+    },
+
+
+
+
     {
         path:'/catalogos/equipos',
         exact:'true',

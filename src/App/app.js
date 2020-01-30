@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { PageSettings } from '../config/page-settings';
 
-
 ///acciones redux
 
-import { getDataIni } from '../redux/actions/FetchFunctions'
-
-
+import { getDataIni } from '../redux/actions/FetchFunctions';
 
 //css
 import './App.css';
@@ -14,11 +11,17 @@ import './App.css';
 //componentes
 import Header from '../components/Layout/header/header';
 import Sidebar from '../components/Layout/sideBar/sidebar';
-import Contenido from '../components/Layout/contenido/cotenido';
+import Contenido from '../components/Layout/contenido/contenido';
 
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.handleViewSideBar = () => {
+      this.setState((state) => ({
+        viewSidebar: !this.state.viewSidebar,
+      }));
+    };
 
     this.handlePrueba = (valor) => {
       this.setState((state) => ({
@@ -26,15 +29,15 @@ class App extends Component {
       }));
     };
 
-    
     this.state = {
       prueba: true,
-
-      handlePrueba: this.handlePrueba,
+      viewSidebar: false,
+      handleViewSideBar: this.handleViewSideBar,
+      funcionPrueba: this.handlePrueba,
+      height: window.innerHeight,
+      width: window.innerWidth,
     };
   }
-
- 
 
   render() {
     return (
@@ -49,5 +52,4 @@ class App extends Component {
   }
 }
 
-
-export default App
+export default App;

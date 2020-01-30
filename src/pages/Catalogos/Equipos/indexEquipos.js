@@ -18,6 +18,7 @@ const useStyles = makeStyles({
 const IndexEquipos = () => {
     const classes  = useStyles()
   return (
+    <div className="row justify-content-md-center">
     <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
       <div className="card">
         <div className={classes.titulo}>
@@ -143,6 +144,7 @@ const IndexEquipos = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

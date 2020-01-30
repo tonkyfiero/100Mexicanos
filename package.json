@@ -39,6 +39,8 @@
     "@material-ui/pickers": "^3.2.8",
     "@rowno/sparkline": "^4.0.0",
     "axios": "^0.19.1",
+    "highcharts": "^8.0.0",
+    "highcharts-react-official": "^2.2.2",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

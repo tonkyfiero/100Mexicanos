@@ -2,6 +2,7 @@ import React from 'react';
 
 const CreUp = () => {
   return (
+    <div className="row justify-content-md-center">
     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
       <div className="section-block" id="basicform">
         <h3 className="section-title">Crear Operaciones</h3>
@@ -50,6 +51,7 @@ const CreUp = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };

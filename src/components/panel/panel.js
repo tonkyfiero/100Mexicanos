@@ -71,12 +71,12 @@ class PanelHeader extends React.Component {
 				<h4 className="panel-title">{ this.props.children }</h4>
 				{(!this.props.noButton &&
 					<PanelStat.Consumer>
-						{({ toggleExpand, toggleRemove, toggleCollapse, toggleReload }) => (
+						{() => (
 							<div className="panel-heading-btn">
-								<button className="btn btn-xs btn-icon btn-circle btn-default" onClick={toggleExpand}><i className="fa fa-expand"></i></button>&nbsp;&nbsp;
-								<button className="btn btn-xs btn-icon btn-circle btn-success" onClick={toggleReload}><i className="fa fa-redo"></i></button>&nbsp;&nbsp;
-								<button className="btn btn-xs btn-icon btn-circle btn-warning" onClick={toggleCollapse}><i className="fa fa-minus"></i></button>&nbsp;&nbsp;
-								<button className="btn btn-xs btn-icon btn-circle btn-danger" onClick={toggleRemove}><i className="fa fa-times"></i></button>
+								<button className="btn btn-xs btn-icon btn-circle btn-default" ><i className="fa fa-expand"></i></button>&nbsp;&nbsp;
+								<button className="btn btn-xs btn-icon btn-circle btn-success" ><i className="fa fa-redo"></i></button>&nbsp;&nbsp;
+								<button className="btn btn-xs btn-icon btn-circle btn-warning" ><i className="fa fa-minus"></i></button>&nbsp;&nbsp;
+								<button className="btn btn-xs btn-icon btn-circle btn-danger" ><i className="fa fa-times"></i></button>
 							</div>
 						)}
 					</PanelStat.Consumer>

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
+///contexto de la app
+import { PageSettings } from './../../../config/page-settings'
+
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 ///material ui context for style
@@ -30,9 +33,13 @@ const useStyles = makeStyles({
     bottom: '0',
     zIndex: '1010',
     paddingTop: '50px',
+    transition: 'all .2s linear'
   },  
   heighFull:{
     height:'100%'
+  },
+  hideSideBar:{
+    left:'-220px'
   }
 });
 
@@ -42,12 +49,19 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div id="sidebar" className={classes.root}>
-      <PerfectScrollbar className={classes.heighFull} options={{suppressScrollX:true}}>
-        <SidebarProfile />      
-        <SidebarNav />
-      </PerfectScrollbar>      
-    </div>
+    <PageSettings.Consumer>
+      {
+        ({viewSidebar}) => (
+          <div id="sidebar" className={clsx(classes.root,!viewSidebar && classes.hideSideBar)}>
+          <PerfectScrollbar className={classes.heighFull} options={{suppressScrollX:true}}>
+            <SidebarProfile />      
+            <SidebarNav />
+          </PerfectScrollbar>      
+        </div>
+        )
+      }
+    </PageSettings.Consumer>
+   
   );
 };
 

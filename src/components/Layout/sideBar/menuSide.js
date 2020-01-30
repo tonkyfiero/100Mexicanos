@@ -1,7 +1,7 @@
 const Menu = [
     { path: '/dashboard', icon: 'fa fa-th', title: 'Dashboard',
       children: [
-        { path: '/dashboard/v1', title: 'Dashboard v1' },
+        { path: '/dashboard/principal', title: 'Principal' },
         { path: '/dashboard/v2', title: 'Dashboard v2' },
         { path: '/dashboard/v3', title: 'Dashboard v3' }
       ]

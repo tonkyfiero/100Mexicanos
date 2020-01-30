@@ -1,18 +1,20 @@
 .panel {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     background: #fff;
     border: 0;
     box-shadow: none;
-    border-radius: 3px;
+    border-radius: 3px;     
+    /* height: inherit;   */
+    height: 100%;
 }
 
 .panel.panel-inverse>.panel-heading {
-    background: #08021b;
+    background: #22020f;
     color: #fff
 }
 
 .panel .panel-heading {
-    padding: 10px 15px;
+    padding: 1px 10px;
     border: 0;
     flex: 1 1;
     flex-wrap: nowrap;
@@ -48,5 +50,43 @@
 }
 
 .panel .panel-body {
-    padding: 15px;
+    padding: 5px;
+    height: 90%;
+}
+
+.btn-default {
+    color: #212529;
+    background-color: #f1f3f4;
+    border-color: #f1f3f4;
+    -webkit-box-shadow: 0;
+    box-shadow: 0
+}
+
+.btn-default:hover {
+    color: #212529;
+    background-color: #d3dadf;
+    border-color: #d3dadf
+}
+
+.btn.btn-circle,
+.btn.btn-rounded {
+    -webkit-border-radius: 200px;
+    border-radius: 200px
+}
+
+.btn.btn-icon {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    line-height: 28px;
+    text-align: center;
+    font-size: 14px
+}
+
+.btn.btn-icon.btn-xs {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    line-height: 16px
 }
