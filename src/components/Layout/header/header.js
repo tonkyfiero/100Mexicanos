@@ -64,7 +64,7 @@ const Header = () => {
         <div id="header" className={classes.root}>
           <div className={classes.navHeader}>
             <a className={classes.linkNavHeader} onClick={()=> handleViewSideBar()}>
-              <i class={clsx(classes.navLogo, 'fas fa-bars')}></i>
+              <i className={clsx(classes.navLogo, 'fas fa-bars')}></i>
               <b style={{ fontWeight: '700' }}>Bloque Norte 02</b>
             </a>
           </div>

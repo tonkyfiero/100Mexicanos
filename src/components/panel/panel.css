@@ -50,8 +50,8 @@
 }
 
 .panel .panel-body {
-    padding: 5px;
-    height: 90%;
+    padding: 1px;    
+    height: 95%;   
 }
 
 .btn-default {

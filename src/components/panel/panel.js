@@ -88,10 +88,11 @@ class PanelHeader extends React.Component {
 
 class PanelBody extends React.Component {
 	render() {
+		// + (collapse ? 'd-none ' : ' ') + this.props.className}
 		return (
 			<PanelStat.Consumer>
 				{({ collapse, reload }) => (
-					<div className={"panel-body "+ (collapse ? 'd-none ' : ' ') + this.props.className}>
+					<div className={"panel-body "}>
 						{ this.props.children }
 						
 						{(reload && 

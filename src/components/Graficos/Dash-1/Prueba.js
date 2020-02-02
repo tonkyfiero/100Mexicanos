@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
@@ -6,15 +6,18 @@ import HighchartsReact from 'highcharts-react-official';
 ///import configuracion base del grafico
 import { barDefault } from '../ConfigCharts'
 
-const PruebaChart = ({ configuracion }) => {
+const PruebaChart = ({ configuracion,alto,ancho }) => {
+
+ 
+
 
   return (
-    <HighchartsReact      
-      highcharts={Highcharts}
-      options={barDefault}
-      updateArgs={[true, true, true]}
-      containerProps={{ style: { height: '100%', width: '100%' } }}
-    />
+    <div style={{width:'100%',height:'100%',}} >
+      <HighchartsReact          
+        highcharts={Highcharts}
+        options={barDefault}        
+      />
+    </div>
   );
 };
 

@@ -8,9 +8,12 @@ body {
     box-sizing: border-box;
 }
 
-
-
-
 *, :after, :before {
   box-sizing: border-box;
 }
+
+
+.puto{  
+  /* height: 100%; */
+}
+
