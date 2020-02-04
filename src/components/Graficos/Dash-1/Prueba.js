@@ -8,16 +8,20 @@ import { barDefault } from '../ConfigCharts'
 
 const PruebaChart = ({ configuracion,alto,ancho }) => {
 
- 
+useEffect(() => {
+  console.log(Highcharts.charts)
+})
 
 
   return (
-    <div style={{width:'100%',height:'100%',}} >
+    <div >
       <HighchartsReact          
         highcharts={Highcharts}
-        options={barDefault}        
-      />
+        options={barDefault}      
+        
+      />   
     </div>
+    
   );
 };
 

@@ -9,6 +9,7 @@ import PruebaChart from '../../../components/Graficos/Dash-1/Prueba';
 import Rumbo from '../../../components/Graficos/Dash-1/Rumbo';
 import Direccional from '../../../components/Graficos/Dash-1/Direccional';
 import Tres from '../../../components/Graficos/Dash-1/Tres';
+import Grafico3D from '../../../components/Graficos/Dash-1/Grafico3d'
 
 //import css
 import './principal.css';
@@ -17,15 +18,15 @@ const Principal = () => {
   const [sizeScreen, setSizeScreen] = useState({ width: window.innerWidth, height: window.innerHeight });
 
   const [data, setData] = useState({
-    rumbo: [],
-    direccional: [],
-    data_tres: { angulo: [], az: [], dl: [] },
+    rumbo:{ Prog:[],Real:[]},
+    direccional: { Prog:[],Real:[]},
+    data_tres: { angulo: { Prog:[],Real:[]}, az: { Prog:[],Real:[]}, dl: { Prog:[],Real:[]} },
   });
 
   useEffect(() => {
     window.addEventListener('resize', updateWidthAndHeight);
     console.log('agregando listener');
-    
+
     return () => {
       window.removeEventListener('resize', updateWidthAndHeight);
       console.log('quitando listener');
@@ -49,7 +50,7 @@ const Principal = () => {
   }, []);
 
   const updateWidthAndHeight = () => {
-    setSizeScreen({ width: window.innerWidth, height: window.innerHeight });    
+    setSizeScreen({ width: window.innerWidth, height: window.innerHeight });
     //setHeight(window.innerHeight);
     medidas();
   };
@@ -60,21 +61,30 @@ const Principal = () => {
   };
 
   const generarDataSeries = (resData) => {
-    let rumbo = [];
-    let direccional = [];
+    let rumbo = { Prog:[],Real:[]};
+    let direccional = { Prog:[],Real:[]};
     let data_tres = {
-      angulo: [],
-      az: [],
-      dl: [],
+      angulo: { Prog:[],Real:[]},
+      az: { Prog:[],Real:[]},
+      dl: { Prog:[],Real:[]},
     };
 
     resData.Programa.forEach((element, i) => {
       //rumbo.push({x:parseFloat(element.EW),y:parseFloat(element.NS),name:i})
-      rumbo.push([parseFloat(element.EW), parseFloat(element.NS)]);
-      direccional.push({ x: parseFloat(element.SumSVert), y: parseFloat(element.TVD) });
-      data_tres.angulo.push({ x: parseFloat(element.Angulo), y: parseFloat(element.ProfMD) });
-      data_tres.az.push({ x: parseFloat(element.Azimuth), y: parseFloat(element.ProfMD) });
-      data_tres.dl.push({ x: parseFloat(element.DL), y: parseFloat(element.ProfMD) });
+      rumbo.Prog.push([parseFloat(element.EW), parseFloat(element.NS)]);
+      direccional.Prog.push({ x: parseFloat(element.SumSVert), y: parseFloat(element.TVD) });
+      data_tres.angulo.Prog.push({ x: parseFloat(element.Angulo), y: parseFloat(element.ProfMD) });
+      data_tres.az.Prog.push({ x: parseFloat(element.Azimuth), y: parseFloat(element.ProfMD) });
+      data_tres.dl.Prog.push({ x: parseFloat(element.DL), y: parseFloat(element.ProfMD) });
+    });
+
+    resData.Real.forEach((element, i) => {
+      //rumbo.push({x:parseFloat(element.EW),y:parseFloat(element.NS),name:i})
+      rumbo.Real.push([parseFloat(element.EW), parseFloat(element.NS)]);
+      direccional.Real.push({ x: parseFloat(element.SumSVert), y: parseFloat(element.TVD) });
+      data_tres.angulo.Real.push({ x: parseFloat(element.Angulo), y: parseFloat(element.ProfMD) });
+      data_tres.az.Real.push({ x: parseFloat(element.Azimuth), y: parseFloat(element.ProfMD) });
+      data_tres.dl.Real.push({ x: parseFloat(element.DL), y: parseFloat(element.ProfMD) });
     });
 
     setData({ rumbo, direccional, data_tres });
@@ -83,52 +93,49 @@ const Principal = () => {
   return (
     <Fragment>
       <div style={{ height: sizeScreen.height - 90 }}>
-        <div className="row" style={{ marginBottom: '5px', height: sizeScreen.height - 80 }}>
-          <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+        <div className="row h-100" style={{ marginBottom: '5px', height: sizeScreen.height - 100 }}>
+          <div className="col-xl-4 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>Vista en Planta</div>
               </PanelHeader>
-              <PanelBody >
-                {data.rumbo.length > 0 ? <Rumbo data={data.rumbo} /> : <span>cargando</span>}
-                
-                </PanelBody>
+              <PanelBody>{data.rumbo.Prog.length > 0 ? <Rumbo data={data.rumbo} /> : <span>cargando</span>}</PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>3D</div>
               </PanelHeader>
-              <PanelBody >
-                {data.data_tres.dl.length > 0 ? <Tres data={data.data_tres.dl} /> : <span>Cargando</span>}
+              <PanelBody>
+                {data.data_tres.dl.Prog.length > 0 ? <Tres data={data.data_tres} /> : <span>Cargando</span>}
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>Direccional</div>
               </PanelHeader>
               <PanelBody>
                 <PanelBody>
-                  {data.direccional.length > 0 ? <Direccional data={data.direccional} /> : <span>cargando</span>}
+                  {data.direccional.Prog.length > 0 ? <Direccional data={data.direccional} /> : <span>cargando</span>}
                 </PanelBody>
               </PanelBody>
             </Panel>
           </div>
 
-          <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>Tiempo vs Prof</div>
               </PanelHeader>
               <PanelBody>
-                <PruebaChart />
+              <Grafico3D />
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>Angulo, Azimut, DL</div>
@@ -138,7 +145,7 @@ const Principal = () => {
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>TP y TNP</div>
@@ -223,4 +230,75 @@ export default Principal;
         </div>
       </div>
     </div> */
+}
+
+{
+  /* <div style={{ height: sizeScreen.height - 90 }}>
+<div className="row" style={{ marginBottom: '5px', height: sizeScreen.height - 80 }}>
+  <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+    <Panel>
+      <PanelHeader>
+        <div>Vista en Planta</div>
+      </PanelHeader>
+      <PanelBody >
+        {data.rumbo.length > 0 ? <Rumbo data={data.rumbo} /> : <span>cargando</span>}
+        
+        </PanelBody>
+    </Panel>
+  </div>
+  <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+    <Panel>
+      <PanelHeader>
+        <div>3D</div>
+      </PanelHeader>
+      <PanelBody >
+        {data.data_tres.dl.length > 0 ? <Tres data={data.data_tres.dl} /> : <span>Cargando</span>}
+      </PanelBody>
+    </Panel>
+  </div>
+  <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+    <Panel>
+      <PanelHeader>
+        <div>Direccional</div>
+      </PanelHeader>
+      <PanelBody>
+        <PanelBody>
+          {data.direccional.length > 0 ? <Direccional data={data.direccional} /> : <span>cargando</span>}
+        </PanelBody>
+      </PanelBody>
+    </Panel>
+  </div>
+
+  <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+    <Panel>
+      <PanelHeader>
+        <div>Tiempo vs Prof</div>
+      </PanelHeader>
+      <PanelBody>
+        <PruebaChart />
+      </PanelBody>
+    </Panel>
+  </div>
+  <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+    <Panel>
+      <PanelHeader>
+        <div>Angulo, Azimut, DL</div>
+      </PanelHeader>
+      <PanelBody>
+        <PruebaChart />
+      </PanelBody>
+    </Panel>
+  </div>
+  <div className="col-xl-4 h-50 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+    <Panel>
+      <PanelHeader>
+        <div>TP y TNP</div>
+      </PanelHeader>
+      <PanelBody>
+        <PruebaChart />
+      </PanelBody>
+    </Panel>
+  </div>
+</div>
+</div> */
 }

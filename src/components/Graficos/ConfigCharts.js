@@ -88,7 +88,7 @@ export const pieDrilldownBase = {
 export const barDefault = {
   chart: {
     type: 'bar',
-    backgroundColor: '#33FF33',      
+    backgroundColor: '#33FF33',
   },
   title: {
     text: '',
@@ -133,10 +133,20 @@ export const barDefault = {
 
 // type: 'scatter',
 
+// plotOptions: {
+//   series: {
+//     lineWidth: 3,
+//     dataLabels: {
+//       enabled: true,
+//       formatter: function() {
+//         return this.point.name;
+//       },
+//     },
+//   },
+// },
 export const desplazamiento = {
   chart: {
-    type: 'spline',    
-    backgroundColor: '#ff0000',
+    type: 'spline',
   },
   legend: {
     floating: true,
@@ -146,7 +156,7 @@ export const desplazamiento = {
   },
   credits: {
     enabled: false,
-  },  
+  },
   xAxis: {
     title: {
       text: 'Desplazamiento',
@@ -165,16 +175,30 @@ export const desplazamiento = {
     tickInterval: 200,
   },
   plotOptions: {
-    series: {
-      lineWidth: 3,
-      dataLabels: {
-        enabled: true,
-        formatter: function() {
-          return this.point.name;
+    scatter: {
+      marker: {
+        radius: 5,
+        states: {
+          hover: {
+            enabled: true,
+            lineColor: 'rgb(100,100,100)',
+          },
         },
+      },
+      states: {
+        hover: {
+          marker: {
+            enabled: false,
+          },
+        },
+      },
+      tooltip: {
+        headerFormat: '<b>{series.name}</b><br>',
+        pointFormat: '{point.x} cm, {point.y} kg',
       },
     },
   },
+
   series: [],
 };
 
@@ -185,7 +209,6 @@ export const config_tres = {
     animation: {
       enabled: false,
     },
-    backgroundColor: '#ff0000',    
   },
   title: {
     text: '',
@@ -202,10 +225,7 @@ export const config_tres = {
     },
     opposite: true,
     gridLineWidth: 1,
-    min: 0,
-    max: 5,
-    tickInterval: 1,
-    minorTickInterval: 0.5,
+    min: 0,        
   },
   yAxis: {
     title: {
@@ -216,13 +236,7 @@ export const config_tres = {
   },
   plotOptions: {
     series: {
-      lineWidth: 3,
-      dataLabels: {
-        enabled: true,
-        formatter: function() {
-          return this.point.name;
-        },
-      },
+      lineWidth: 1,     
     },
   },
   series: [],
@@ -235,11 +249,6 @@ export const ejeCruzado = {
     animation: {
       enabled: false,
     },
-    backgroundColor: '#ff0000',
-    spacingBottom: 15,
-    spacingTop: 10,
-    spacingLeft: 10,
-    spacingRight: 10,
   },
   title: {
     text: '',

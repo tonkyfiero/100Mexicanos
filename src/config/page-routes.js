@@ -29,6 +29,7 @@ import Actividad from '../pages/Seguimiento/ActividadFisica/CreUpAF'
 //dashboards 
 
 import Principal from '../pages/Dashboards/Principal/principal'
+import Grid from '../pages/Dashboards/Principal/GridLayout'
 
 
 
