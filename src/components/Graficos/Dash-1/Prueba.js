@@ -6,7 +6,7 @@ import HighchartsReact from 'highcharts-react-official';
 ///import configuracion base del grafico
 import { barDefault } from '../ConfigCharts'
 
-const PruebaChart = ({ configuracion,alto,ancho }) => {
+const PruebaChart = ({ message }) => {
 
 useEffect(() => {
   console.log(Highcharts.charts)
@@ -15,6 +15,7 @@ useEffect(() => {
 
   return (
     <div style={{height:'100%',width:'100%'}}>
+      {message}
       <HighchartsReact          
         highcharts={Highcharts}
         options={barDefault}              

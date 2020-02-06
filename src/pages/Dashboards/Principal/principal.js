@@ -99,63 +99,48 @@ const Principal = () => {
                 <div>Vista en Planta</div>
               </PanelHeader>
               <PanelBody>
-                {
-                  ({mensaje}) => {
-                    return((data.rumbo.Prog.length) > 0 ? <Rumbo data={data.rumbo}  prueba={mensaje} /> : <span>cargando</span>)
-                  }
-                }
-                
-              </PanelBody>
-            </Panel>
-          </div>
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
-            <Panel>
-              <PanelHeader>
-                <div>3D</div>
-              </PanelHeader>
-              <PanelBody>
-                {/* {data.data_tres.dl.Prog.length > 0 ? <Tres data={data.data_tres} /> : <span>Cargando</span>} */}
-              </PanelBody>
-            </Panel>
-          </div>
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
-            <Panel>
-              <PanelHeader>
-                <div>Direccional</div>
-              </PanelHeader>
-              <PanelBody>
-                <PanelBody>
-                  {/* {data.direccional.Prog.length > 0 ? <Direccional data={data.direccional} /> : <span>cargando</span>} */}
-                </PanelBody>
-              </PanelBody>
-            </Panel>
-          </div>
-
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
-            <Panel>
-              <PanelHeader>
-                <div>Tiempo vs Prof</div>
-              </PanelHeader>
-              <PanelBody>
-                {/* <PruebaChart /> */}
                 <Grafico3D />
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
+          <div className="col-xl-4 h-100 px-xl-1">
             <Panel>
               <PanelHeader>
-                <div>Angulo, Azimut, DL</div>
+                <div>soy principal</div>
               </PanelHeader>
-              <PanelBody>{/* <PruebaChart /> */}</PanelBody>
+              <PanelBody>
+                <PruebaChart />
+              </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
+          <div className="col-xl-4 h-100 px-xl-1">
             <Panel>
               <PanelHeader>
-                <div>TP y TNP</div>
+                <div>soy principal</div>
               </PanelHeader>
-              <PanelBody>{/* <PruebaChart /> */}</PanelBody>
+              <PanelBody>
+                <PruebaChart />
+              </PanelBody>
+            </Panel>
+          </div>
+          <div className="col-xl-4 h-100 px-xl-1">
+            <Panel>
+              <PanelHeader>
+                <div>soy principal</div>
+              </PanelHeader>
+              <PanelBody>
+                <PruebaChart />
+              </PanelBody>
+            </Panel>
+          </div>
+          <div className="col-xl-4 h-100 px-xl-1">
+            <Panel>
+              <PanelHeader>
+                <div>soy principal</div>
+              </PanelHeader>
+              <PanelBody>
+                <PruebaChart />
+              </PanelBody>
             </Panel>
           </div>
         </div>

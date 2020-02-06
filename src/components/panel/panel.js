@@ -48,10 +48,11 @@ class Panel extends React.Component {
       collapse: false,
       reload: false,
       remove: false,
+      prueba:'prueba',
       toggleExpand: this.toggleExpand,
       toggleReload: this.toggleReload,
       toggleRemove: this.toggleRemove,
-      toggleCollapse: this.toggleCollapse,
+      toggleCollapse: this.toggleCollapse,      
     };
   }
 
@@ -81,10 +82,11 @@ class Panel extends React.Component {
   };
 
   render() {
-	console.log(`alto ${this.state.height}, ancho ${this.state.width}`)
     return (
       <PanelStat.Provider value={this.state}>
+        
         {!this.state.remove && (
+          
           <div
             ref={this.resizeSubject}
             className={
@@ -137,14 +139,24 @@ class PanelHeader extends React.Component {
 }
 
 class PanelBody extends React.Component {
+  crearChildren = (alto,ancho) => {
+    let children = React.Children.map(this.props.children, (child, index) => {
+      return React.cloneElement(child, {
+        index,
+        alto: alto,
+        ancho:ancho
+      });
+    });
+  return children
+  };
+
   render() {
     // + (collapse ? 'd-none ' : ' ') + this.props.className}
     return (
       <PanelStat.Consumer>
-        {({ collapse, reload }) => (
+        {({ collapse, reload,height,width}) => (
           <div className={'panel-body '}>
-            {this.props.children({mensaje:'hola maricon'})}
-
+            {this.crearChildren(height,width)}
             {reload && (
               <div className="panel-loader">
                 <span className="spinner-small"></span>
