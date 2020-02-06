@@ -3,6 +3,8 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 require('highcharts/modules/annotations')(Highcharts);
 
+
+
 (function(H) {
   H.wrap(H.Axis.prototype, 'render', function(proceed) {
     var chart = this.chart,
@@ -20,7 +22,7 @@ require('highcharts/modules/annotations')(Highcharts);
 ///import configuracion base del grafico
 import { ejeCruzado } from '../ConfigCharts';
 
-const Rumbo = ({ data }) => {
+const Rumbo = ({ data,prueba }) => {
   const [config, setConfig] = useState(ejeCruzado);
 
   useEffect(() => {
@@ -34,14 +36,16 @@ const Rumbo = ({ data }) => {
     aux.series.push({ name: 'Real', data: [...data.Real] });
     aux.series.push({ name: 'Prog', data: [...data.Prog] });
 
-    setConfig(aux);
+    setConfig(aux);    
   };
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <div className='chartjs-size-monitor'>
+      {`datos ${prueba}`}
       <HighchartsReact
         highcharts={Highcharts}
         options={config}
+        containerProps={{style:{ height: '100%', width: '100%' }}}
       />
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
+import { SizeMe } from 'react-sizeme';
 
 //componentes development
 import { Panel, PanelBody, PanelFooter, PanelHeader } from '../../../components/panel/panel';
@@ -9,7 +8,7 @@ import PruebaChart from '../../../components/Graficos/Dash-1/Prueba';
 import Rumbo from '../../../components/Graficos/Dash-1/Rumbo';
 import Direccional from '../../../components/Graficos/Dash-1/Direccional';
 import Tres from '../../../components/Graficos/Dash-1/Tres';
-import Grafico3D from '../../../components/Graficos/Dash-1/Grafico3d'
+import Grafico3D from '../../../components/Graficos/Dash-1/Grafico3d';
 
 //import css
 import './principal.css';
@@ -18,9 +17,9 @@ const Principal = () => {
   const [sizeScreen, setSizeScreen] = useState({ width: window.innerWidth, height: window.innerHeight });
 
   const [data, setData] = useState({
-    rumbo:{ Prog:[],Real:[]},
-    direccional: { Prog:[],Real:[]},
-    data_tres: { angulo: { Prog:[],Real:[]}, az: { Prog:[],Real:[]}, dl: { Prog:[],Real:[]} },
+    rumbo: { Prog: [], Real: [] },
+    direccional: { Prog: [], Real: [] },
+    data_tres: { angulo: { Prog: [], Real: [] }, az: { Prog: [], Real: [] }, dl: { Prog: [], Real: [] } },
   });
 
   useEffect(() => {
@@ -61,12 +60,12 @@ const Principal = () => {
   };
 
   const generarDataSeries = (resData) => {
-    let rumbo = { Prog:[],Real:[]};
-    let direccional = { Prog:[],Real:[]};
+    let rumbo = { Prog: [], Real: [] };
+    let direccional = { Prog: [], Real: [] };
     let data_tres = {
-      angulo: { Prog:[],Real:[]},
-      az: { Prog:[],Real:[]},
-      dl: { Prog:[],Real:[]},
+      angulo: { Prog: [], Real: [] },
+      az: { Prog: [], Real: [] },
+      dl: { Prog: [], Real: [] },
     };
 
     resData.Programa.forEach((element, i) => {
@@ -93,66 +92,70 @@ const Principal = () => {
   return (
     <Fragment>
       <div style={{ height: sizeScreen.height - 90 }}>
-        <div className="row h-100" style={{ marginBottom: '5px', height: sizeScreen.height - 100 }}>
+        <div className="row h-100" style={{ marginBottom: '5px', height: sizeScreen.height - 130 }}>
           <div className="col-xl-4 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>Vista en Planta</div>
               </PanelHeader>
-              <PanelBody>{data.rumbo.Prog.length > 0 ? <Rumbo data={data.rumbo} /> : <span>cargando</span>}</PanelBody>
+              <PanelBody>
+                {
+                  ({mensaje}) => {
+                    return((data.rumbo.Prog.length) > 0 ? <Rumbo data={data.rumbo}  prueba={mensaje} /> : <span>cargando</span>)
+                  }
+                }
+                
+              </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
             <Panel>
               <PanelHeader>
                 <div>3D</div>
               </PanelHeader>
               <PanelBody>
-                {data.data_tres.dl.Prog.length > 0 ? <Tres data={data.data_tres} /> : <span>Cargando</span>}
+                {/* {data.data_tres.dl.Prog.length > 0 ? <Tres data={data.data_tres} /> : <span>Cargando</span>} */}
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
             <Panel>
               <PanelHeader>
                 <div>Direccional</div>
               </PanelHeader>
               <PanelBody>
                 <PanelBody>
-                  {data.direccional.Prog.length > 0 ? <Direccional data={data.direccional} /> : <span>cargando</span>}
+                  {/* {data.direccional.Prog.length > 0 ? <Direccional data={data.direccional} /> : <span>cargando</span>} */}
                 </PanelBody>
               </PanelBody>
             </Panel>
           </div>
 
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
             <Panel>
               <PanelHeader>
                 <div>Tiempo vs Prof</div>
               </PanelHeader>
               <PanelBody>
-              <Grafico3D />
+                {/* <PruebaChart /> */}
+                <Grafico3D />
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
             <Panel>
               <PanelHeader>
                 <div>Angulo, Azimut, DL</div>
               </PanelHeader>
-              <PanelBody>
-                <PruebaChart />
-              </PanelBody>
+              <PanelBody>{/* <PruebaChart /> */}</PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
+          <div className="col-xl-4  col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1 h-50">
             <Panel>
               <PanelHeader>
                 <div>TP y TNP</div>
               </PanelHeader>
-              <PanelBody>
-                <PruebaChart />
-              </PanelBody>
+              <PanelBody>{/* <PruebaChart /> */}</PanelBody>
             </Panel>
           </div>
         </div>

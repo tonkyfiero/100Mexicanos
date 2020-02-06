@@ -14,11 +14,10 @@ useEffect(() => {
 
 
   return (
-    <div >
+    <div style={{height:'100%',width:'100%'}}>
       <HighchartsReact          
         highcharts={Highcharts}
-        options={barDefault}      
-        
+        options={barDefault}              
       />   
     </div>
     

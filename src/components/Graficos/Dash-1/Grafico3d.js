@@ -1,10 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef,useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Card, CardContent } from '@material-ui/core';
 import Plot from 'react-plotly.js';
 
 const Grafico3D = () => {
   const [fullWidth, setFullWidth] = useState(true);
+  const [alto, setAlto] = useState(300);
+
+
 
   const plotRef = useRef(null);
   const toggleWidth = () => {
@@ -14,12 +17,18 @@ const Grafico3D = () => {
     );
   };
 
+  const changeAlto = () => {
+    setAlto(800)
+    //plotRef.current.resizeHandler(),
+    console.log('cambiando')
+  }
+
   return (
     <div style={{ width: '100%', height: '100%' }}>
+      <button onClick={changeAlto}>okk</button>
       <Plot
         ref={plotRef}
-        useResizeHandler
-        style={{ width: '100%' }}
+        useResizeHandler='true'             
         data={[
           {
             x: [
@@ -307,8 +316,10 @@ const Grafico3D = () => {
           },
         ]}
         layout={{
-          showlegend: false,
+          showlegend: false,          
           autosize: true,
+          height:alto,
+          width:alto,
           margin: {
             l: 10,
             r: 10,
@@ -347,6 +358,7 @@ const Grafico3D = () => {
             },
           },
         }}
+        config={{}}
       />
     </div>
   );

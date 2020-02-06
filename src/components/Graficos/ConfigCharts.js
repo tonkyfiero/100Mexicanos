@@ -249,6 +249,7 @@ export const ejeCruzado = {
     animation: {
       enabled: false,
     },
+    height:300
   },
   title: {
     text: '',
