@@ -99,47 +99,46 @@ const Principal = () => {
                 <div>Vista en Planta</div>
               </PanelHeader>
               <PanelBody>
-                <Rumbo data={data.rumbo}/>
+               <Grafico3D />
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4 h-100 px-xl-1">
+          <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>soy principal</div>
               </PanelHeader>
               <PanelBody>
-                <Grafico3D />
+              
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4 h-100 px-xl-1">
+          <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>soy principal</div>
               </PanelHeader>
               <PanelBody>
-                <Direccional data={data.direccional}/>
+              
               </PanelBody>
             </Panel>
           </div>
-          <div className="col-xl-4 h-100 px-xl-1">
+          <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
+            <Panel>
+              <PanelHeader>
+                <div>soy principal</div>
+              </PanelHeader>
+              <PanelBody>                
+              </PanelBody>
+            </Panel>
+          </div>
+          <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel>
               <PanelHeader>
                 <div>soy principal</div>
               </PanelHeader>
               <PanelBody>
-                <PruebaChart />
-              </PanelBody>
-            </Panel>
-          </div>
-          <div className="col-xl-4 h-100 px-xl-1">
-            <Panel>
-              <PanelHeader>
-                <div>soy principal</div>
-              </PanelHeader>
-              <PanelBody>
-                <PruebaChart />
+                
               </PanelBody>
             </Panel>
           </div>

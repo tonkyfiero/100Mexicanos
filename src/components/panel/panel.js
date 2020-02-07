@@ -139,12 +139,13 @@ class PanelHeader extends React.Component {
 }
 
 class PanelBody extends React.Component {
-  crearChildren = (alto,ancho) => {
+  crearChildren = (alto,ancho,expand) => {
     let children = React.Children.map(this.props.children, (child, index) => {
       return React.cloneElement(child, {
         index,
         alto: alto,
-        ancho:ancho
+        ancho:ancho,
+        expand:expand
       });
     });
   return children
@@ -154,9 +155,9 @@ class PanelBody extends React.Component {
     // + (collapse ? 'd-none ' : ' ') + this.props.className}
     return (
       <PanelStat.Consumer>
-        {({ collapse, reload,height,width}) => (
+        {({ collapse, reload,height,width,expand}) => (
           <div className={'panel-body '}>
-            {this.crearChildren(height,width)}
+            {this.crearChildren(height,width,expand)}
             {reload && (
               <div className="panel-loader">
                 <span className="spinner-small"></span>

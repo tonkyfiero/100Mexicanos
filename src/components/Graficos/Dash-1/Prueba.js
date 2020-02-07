@@ -6,16 +6,16 @@ import HighchartsReact from 'highcharts-react-official';
 ///import configuracion base del grafico
 import { barDefault } from '../ConfigCharts'
 
-const PruebaChart = ({ message }) => {
+const PruebaChart = ({ alto,ancho }) => {
 
 useEffect(() => {
-  console.log(Highcharts.charts)
+  console.log(`alto ${alto}, ancho ${ancho}`)
 })
 
 
   return (
     <div style={{height:'100%',width:'100%'}}>
-      {message}
+      {`alto ${alto}, ancho ${ancho}`}
       <HighchartsReact          
         highcharts={Highcharts}
         options={barDefault}              
