@@ -34,22 +34,21 @@ import Grid from '../pages/Dashboards/Principal/GridLayout'
 
 
 
+// {
+//     path:'/',
+//     exact:true,
+//     component: () => <Redirect to='/' />
+// },   
+
 
 const routes = [
-    {
-        path:'/',
-        exact:true,
-        component: () => <Redirect to='/' />
-    },   
+    
     {
         path:'/dashboard/principal',
         exact:'true',
         title:'Principal',
         component: () => <Principal />
     },
-
-
-
 
     {
         path:'/catalogos/equipos',

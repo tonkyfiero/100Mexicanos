@@ -99,6 +99,16 @@ const Principal = () => {
                 <div>Vista en Planta</div>
               </PanelHeader>
               <PanelBody>
+                <Rumbo data={data.rumbo}/>
+              </PanelBody>
+            </Panel>
+          </div>
+          <div className="col-xl-4 h-100 px-xl-1">
+            <Panel>
+              <PanelHeader>
+                <div>soy principal</div>
+              </PanelHeader>
+              <PanelBody>
                 <Grafico3D />
               </PanelBody>
             </Panel>
@@ -109,17 +119,7 @@ const Principal = () => {
                 <div>soy principal</div>
               </PanelHeader>
               <PanelBody>
-                <PruebaChart />
-              </PanelBody>
-            </Panel>
-          </div>
-          <div className="col-xl-4 h-100 px-xl-1">
-            <Panel>
-              <PanelHeader>
-                <div>soy principal</div>
-              </PanelHeader>
-              <PanelBody>
-                <PruebaChart />
+                <Direccional data={data.direccional}/>
               </PanelBody>
             </Panel>
           </div>

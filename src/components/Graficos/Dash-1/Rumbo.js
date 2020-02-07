@@ -20,7 +20,7 @@ require('highcharts/modules/annotations')(Highcharts);
 ///import configuracion base del grafico
 import { ejeCruzado } from '../ConfigCharts';
 
-const Rumbo = ({ data, message }) => {
+const Rumbo = ({ data }) => {
   const [config, setConfig] = useState(ejeCruzado);
 
   useEffect(() => {
@@ -38,12 +38,10 @@ const Rumbo = ({ data, message }) => {
   };
 
   return (
-    <div className="chartjs-size-monitor">
-      {`datos ${message}`}
+    <div  style={{ height: '100%', width: '100%' }}>     
       <HighchartsReact
         highcharts={Highcharts}
-        options={config}
-        containerProps={{ style: { height: '100%', width: '100%' } }}
+        options={config}        
       />
     </div>
   );

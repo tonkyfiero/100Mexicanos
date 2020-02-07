@@ -3,12 +3,24 @@ import Plot from 'react-plotly.js';
 
 class Grafico3D extends Component {
   constructor(props) {
-    super(props);    
+    super(props);   
+    
+    this.state = {
+      alto:200,
+      ancho:200
+    }
+  }
+
+  componentDidMount(){
+    this.setState({
+      alto:this.props.alto,
+      ancho:this.props.ancho,
+    })
   }
 
 
   render() {
-    const {alto,ancho} = this.props
+    const {alto,ancho} = this.state
     return (
       <div style={{width:'100%',height:'100%'}}  ref={this.resizeSubject}>      
         <Plot
@@ -300,8 +312,8 @@ class Grafico3D extends Component {
           ]}
           layout={{
             showlegend: false,       
-            height:alto -50,                 
-            width:ancho,      
+            height: 300,                 
+            width:300,      
             margin: {
               l: 10,
               r: 10,

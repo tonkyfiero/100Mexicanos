@@ -5,7 +5,7 @@ import HighchartsReact from 'highcharts-react-official';
 
 import { desplazamiento } from '../ConfigCharts';
 
-const Rumbo = ({ data }) => {
+const Direccional = ({ data }) => {
   const [config, setConfig] = useState(desplazamiento);
 
   useEffect(() => {
@@ -29,4 +29,4 @@ const Rumbo = ({ data }) => {
   );
 };
 
-export default Rumbo;
+export default Direccional;
