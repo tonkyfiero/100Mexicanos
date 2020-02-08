@@ -48,7 +48,8 @@ class Panel extends React.Component {
       collapse: false,
       reload: false,
       remove: false,
-      prueba:'prueba',
+      prueba:'prueba',      
+      identificador:this.props.identificador,
       toggleExpand: this.toggleExpand,
       toggleReload: this.toggleReload,
       toggleRemove: this.toggleRemove,
@@ -82,6 +83,7 @@ class Panel extends React.Component {
   };
 
   render() {
+    console.log(`${this.state.identificador} ${Date.now().toString()}`)
     return (
       <PanelStat.Provider value={this.state}>
         

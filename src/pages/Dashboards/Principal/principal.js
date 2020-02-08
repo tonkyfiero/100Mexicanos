@@ -32,21 +32,21 @@ const Principal = () => {
     };
   });
 
-  useEffect(() => {
-    axios
-      .get('https://localhost:44392/api/dashboard', {
-        params: {
-          idPozo: 7,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        generarDataSeries(res.data);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get('https://localhost:44392/api/dashboard', {
+  //       params: {
+  //         idPozo: 7,
+  //       },
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //       generarDataSeries(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // }, []);
 
   const updateWidthAndHeight = () => {
     setSizeScreen({ width: window.innerWidth, height: window.innerHeight });
@@ -94,17 +94,17 @@ const Principal = () => {
       <div style={{ height: sizeScreen.height - 90 }}>
         <div className="row h-100" style={{ marginBottom: '5px', height: sizeScreen.height - 130 }}>
           <div className="col-xl-4 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel>
+            <Panel identificador={1}>
               <PanelHeader>
                 <div>Vista en Planta</div>
               </PanelHeader>
-              <PanelBody>
-               <Grafico3D />
+              <PanelBody>    
+                <Grafico3D />          
               </PanelBody>
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel>
+            <Panel identificador={2}>
               <PanelHeader>
                 <div>soy principal</div>
               </PanelHeader>
@@ -114,7 +114,7 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel>
+            <Panel identificador={3}>
               <PanelHeader>
                 <div>soy principal</div>
               </PanelHeader>
@@ -124,7 +124,7 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel>
+            <Panel identificador={4}>
               <PanelHeader>
                 <div>soy principal</div>
               </PanelHeader>
@@ -133,7 +133,17 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel>
+            <Panel identificador={5}>
+              <PanelHeader>
+                <div>soy principal</div>
+              </PanelHeader>
+              <PanelBody>
+                
+              </PanelBody>
+            </Panel>
+          </div>
+          <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
+            <Panel identificador={6}>
               <PanelHeader>
                 <div>soy principal</div>
               </PanelHeader>

@@ -16,6 +16,13 @@ body {
 }
 
 
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+}
+
+
 .chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
   position: absolute;
   direction: ltr;
