@@ -17,9 +17,9 @@ const Principal = () => {
   const [sizeScreen, setSizeScreen] = useState({ width: window.innerWidth, height: window.innerHeight });
 
   const [data, setData] = useState({
-    rumbo: { Prog: [], Real: [] },
-    direccional: { Prog: [], Real: [] },
-    data_tres: { angulo: { Prog: [], Real: [] }, az: { Prog: [], Real: [] }, dl: { Prog: [], Real: [] } },
+    rumbo: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
+    direccional: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
+    data_tres: { angulo: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } }, az: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } }, dl: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } } },
   });
 
   useEffect(() => {
@@ -32,21 +32,21 @@ const Principal = () => {
     };
   });
 
-  // useEffect(() => {
-  //   axios
-  //     .get('https://localhost:44392/api/dashboard', {
-  //       params: {
-  //         idPozo: 7,
-  //       },
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //       generarDataSeries(res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get('https://localhost:44392/api/dashboard', {
+        params: {
+          idPozo: 7,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        generarDataSeries(res.data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  }, []);
 
   const updateWidthAndHeight = () => {
     setSizeScreen({ width: window.innerWidth, height: window.innerHeight });
@@ -60,30 +60,53 @@ const Principal = () => {
   };
 
   const generarDataSeries = (resData) => {
-    let rumbo = { Prog: [], Real: [] };
-    let direccional = { Prog: [], Real: [] };
+    let rumbo = { Prog: {x:[],y:[]}, Real: {x:[],y:[]} };
+    let direccional = { Prog: {x:[],y:[]}, Real: {x:[],y:[]} };
     let data_tres = {
-      angulo: { Prog: [], Real: [] },
-      az: { Prog: [], Real: [] },
-      dl: { Prog: [], Real: [] },
+      angulo: { Prog: {x:[],y:[]}, Real: {x:[],y:[]} },
+      az: { Prog: {x:[],y:[]}, Real: {x:[],y:[]} },
+      dl: { Prog: {x:[],y:[]}, Real: {x:[],y:[]} },
     };
 
     resData.Programa.forEach((element, i) => {
-      //rumbo.push({x:parseFloat(element.EW),y:parseFloat(element.NS),name:i})
-      rumbo.Prog.push([parseFloat(element.EW), parseFloat(element.NS)]);
-      direccional.Prog.push({ x: parseFloat(element.SumSVert), y: parseFloat(element.TVD) });
-      data_tres.angulo.Prog.push({ x: parseFloat(element.Angulo), y: parseFloat(element.ProfMD) });
-      data_tres.az.Prog.push({ x: parseFloat(element.Azimuth), y: parseFloat(element.ProfMD) });
-      data_tres.dl.Prog.push({ x: parseFloat(element.DL), y: parseFloat(element.ProfMD) });
+      
+
+      rumbo.Prog.x.push(parseFloat(element.NS));
+      rumbo.Prog.y.push(parseFloat(element.EW));
+
+      direccional.Prog.x.push(parseFloat(element.SumSVert));
+      direccional.Prog.y.push(parseFloat(element.TVD));
+
+
+      // -------------------------
+      data_tres.angulo.Prog.x.push(parseFloat(element.Angulo));
+      data_tres.angulo.Prog.y.push(parseFloat(element.ProfMD));
+
+      data_tres.az.Prog.x.push(parseFloat(element.Azimuth));
+      data_tres.az.Prog.y.push(parseFloat(element.ProfMD));
+
+      data_tres.dl.Prog.x.push(parseFloat(element.DL));
+      data_tres.dl.Prog.y.push(parseFloat(element.ProfMD));
     });
 
     resData.Real.forEach((element, i) => {
       //rumbo.push({x:parseFloat(element.EW),y:parseFloat(element.NS),name:i})
-      rumbo.Real.push([parseFloat(element.EW), parseFloat(element.NS)]);
-      direccional.Real.push({ x: parseFloat(element.SumSVert), y: parseFloat(element.TVD) });
-      data_tres.angulo.Real.push({ x: parseFloat(element.Angulo), y: parseFloat(element.ProfMD) });
-      data_tres.az.Real.push({ x: parseFloat(element.Azimuth), y: parseFloat(element.ProfMD) });
-      data_tres.dl.Real.push({ x: parseFloat(element.DL), y: parseFloat(element.ProfMD) });
+      rumbo.Real.x.push(parseFloat(element.NS));
+      rumbo.Real.y.push(parseFloat(element.EW));
+
+      direccional.Real.x.push(parseFloat(element.SumSVert));
+      direccional.Real.y.push(parseFloat(element.TVD));
+
+      // --------------------------------------------
+
+      data_tres.angulo.Real.x.push(parseFloat(element.Angulo));
+      data_tres.angulo.Real.y.push(parseFloat(element.ProfMD));
+
+      data_tres.az.Real.x.push(parseFloat(element.Azimuth));
+      data_tres.az.Real.y.push(parseFloat(element.ProfMD));
+
+      data_tres.dl.Real.x.push(parseFloat(element.DL));
+      data_tres.dl.Real.y.push(parseFloat(element.ProfMD));
     });
 
     setData({ rumbo, direccional, data_tres });
@@ -98,8 +121,8 @@ const Principal = () => {
               <PanelHeader>
                 <div>Vista en Planta</div>
               </PanelHeader>
-              <PanelBody>    
-                <Grafico3D />          
+              <PanelBody>
+              <Rumbo data={data.rumbo} />
               </PanelBody>
             </Panel>
           </div>
@@ -109,26 +132,27 @@ const Principal = () => {
                 <div>soy principal</div>
               </PanelHeader>
               <PanelBody>
-              
+              <Grafico3D />
               </PanelBody>
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel identificador={3}>
               <PanelHeader>
-                <div>soy principal</div>
+                <div>Direccional</div>
               </PanelHeader>
               <PanelBody>
-              
+              <Direccional data={data.direccional} />
               </PanelBody>
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel identificador={4}>
               <PanelHeader>
-                <div>soy principal</div>
+                <div>DL,Angulo,Azimuth</div>
               </PanelHeader>
-              <PanelBody>                
+              <PanelBody>
+                <Tres data={data.data_tres} />
               </PanelBody>
             </Panel>
           </div>
@@ -138,7 +162,7 @@ const Principal = () => {
                 <div>soy principal</div>
               </PanelHeader>
               <PanelBody>
-                
+
               </PanelBody>
             </Panel>
           </div>
@@ -148,7 +172,7 @@ const Principal = () => {
                 <div>soy principal</div>
               </PanelHeader>
               <PanelBody>
-                
+
               </PanelBody>
             </Panel>
           </div>

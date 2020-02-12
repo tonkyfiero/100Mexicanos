@@ -1,73 +1,176 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
+import Plot from 'react-plotly.js';
+import { Legend } from 'highcharts';
 
-///import configuracion base del grafico
-import { config_tres } from '../ConfigCharts';
 
-const Tres = ({ data }) => {
-  const [config, setConfig] = useState({ dl: {}, angulo: {}, az: {} });
+const Tres = ({ data, alto, ancho }) => {
+  const [configuracion, setConfiguracion] = useState({
+    data: {}
+  }
+  )
 
   useEffect(() => {
-    if (data.dl.Prog.length > 0) {
-      configurarGrafico();
+    calcularConfiguracion(data)
+  }, [data])
+
+  const calcularConfiguracion = (data) => {
+    // let max = Math.max(...data.Prog.x, ...data.Prog.y, ...data.Real.x, ...data.Real.y)
+    // let min = Math.min(...data.Prog.x, ...data.Prog.y, ...data.Real.x, ...data.Real.y)
+
+
+    // angulo,az,dl
+
+
+
+    ///---Dog Leg data---------------------
+    let programaDL = {
+      x: [...data.dl.Prog.x],
+      y: [...data.dl.Prog.y],
+      mode: 'lines',
+      type: 'scatter',
+      legendgroup: 'Programa',
+      name:'Programa',
+      line: {
+        color: 'rgb(17, 53, 199)',
+        width: 2
+      }
+
     }
-  }, [data]);
+    let realDL = {
+      x: [...data.dl.Real.x],
+      y: [...data.dl.Real.y],
+      mode: 'lines',
+      type: 'scatter',
+      legendgroup: 'Real',
+      name:'Real',
+      line: {
+        color: 'rgb(75, 142, 8)',
+        width: 2
+      }
+    }
 
-  const configurarGrafico = () => {
-    let dl = JSON.parse(JSON.stringify(config_tres));
-    let angulo = JSON.parse(JSON.stringify(config_tres));
-    let az = JSON.parse(JSON.stringify(config_tres));
+    //----------azimunt data------------------------
 
-    // rumbo:{ Prog:[],Real:[]},
-    // direccional: { Prog:[],Real:[]},
-    // data_tres: { angulo: { Prog:[],Real:[]}, az: { Prog:[],Real:[]}, dl: { Prog:[],Real:[]} },
+    let realAz = {
+      x: [...data.az.Real.x],
+      y: [...data.az.Real.y],
+      mode: 'lines',
+      type: 'scatter',
+      xaxis: 'x2',
+      yaxis: 'y',
+      legendgroup: 'Real',      
+      name:'Real',
+      showlegend: false,
+      line: {
+        color: 'rgb(75, 142, 8)',
+        width: 2
+      }
+    }
 
-    dl.series.push({ name: 'Real', data: [...data.dl.Real] });   
-    dl.series.push({ name: 'Prog', data: [...data.dl.Prog] });    
-    const dlMax_X = Math.max.apply(Math,data.dl.Real.map(o => o.x))
-    const dlMax_Y = Math.max.apply(Math,data.dl.Real.map(o => o.y))
-    dl.xAxis.max=dlMax_X+1
-    dl.yAxis.max=dlMax_Y+50
-    dl.xAxis.title.text='DL'
+    let programaAz = {
+      x: [...data.az.Prog.x],
+      y: [...data.az.Prog.y],
+      mode: 'lines',
+      type: 'scatter',
+      xaxis: 'x2',
+      yaxis: 'y',
+      legendgroup: 'Programa',
+      name:'Programa',
+      showlegend: false,
+      line: {
+        color: 'rgb(17, 53, 199)',
+        width: 2
+      }
+    }
 
 
-    angulo.series.push({ name: 'Real', data: [...data.angulo.Real] });
-    angulo.series.push({ name: 'Prog', data: [...data.angulo.Prog] });
-    const anguloMax_X = Math.max.apply(Math,data.angulo.Real.map(o => o.x))
-    const anguloMax_Y = Math.max.apply(Math,data.angulo.Real.map(o => o.y))
-    angulo.xAxis.max=anguloMax_X+1
-    angulo.yAxis.max=anguloMax_Y+50
-    angulo.xAxis.title.text='Angulo'
+    //-----data angulo----------------------------------------------
+    let realAngulo = {
+      x: [...data.angulo.Real.x],
+      y: [...data.angulo.Real.y],
+      mode: 'lines',
+      type: 'scatter',
+      xaxis: 'x3',
+      yaxis: 'y',
+      legendgroup: 'Real',
+      name:'Real',
+      showlegend: false,
+      line: {
+        color: 'rgb(75, 142, 8)',
+        width: 2
+      }
+    }
 
+    let programaAngulo = {
+      x: [...data.angulo.Prog.x],
+      y: [...data.angulo.Prog.y],
+      mode: 'lines',
+      type: 'scatter',
+      xaxis: 'x3',
+      yaxis: 'y',
+      legendgroup: 'Programa',
+      name:'Programa',
+      showlegend: false,
+      line: {
+        color: 'rgb(17, 53, 199)',
+        width: 2
+      }
 
+    }
 
-    az.series.push({ name: 'Real', data: [...data.az.Real] });
-    az.series.push({ name: 'Prog', data: [...data.az.Prog] });
-    const azMax_X = Math.max.apply(Math,data.az.Real.map(o => o.x))
-    const azMax_Y = Math.max.apply(Math,data.az.Real.map(o => o.y))
-    az.xAxis.max= 100 * Math.ceil(azMax_X / 100) 
-    az.yAxis.max= 100 * Math.ceil(azMax_Y / 100) 
-    az.xAxis.tickInterval=100
-    az.xAxis.minorTickInterval= 50,
-    az.xAxis.title.text='Azimuth'
+    setConfiguracion({
+      data: [
+        programaDL,
+        realDL,
+        programaAngulo,
+        realAngulo,
+        programaAz,
+        realAz,
+      ],     
+    })
+  }
 
-    setConfig({ dl, angulo, az });
-  };
 
   return (
-    <div className="container-fluid h-100">
-      <div className="row">
-        <div className="col-xl-4 pr-xl-0 ">
-          <HighchartsReact highcharts={Highcharts} options={config.dl} />
-        </div>
-        <div className="col-xl-4 px-xl-0  ">
-          <HighchartsReact highcharts={Highcharts} options={config.angulo} />
-        </div>
-        <div className="col-xl-4 pl-xl-0">
-          <HighchartsReact highcharts={Highcharts} options={config.az} />
-        </div>
-      </div>
+    <div>
+      <Plot
+        data={
+          configuracion.data         
+        }
+        layout={{          
+          height: alto - (alto * 0.10),
+          width: ancho - (ancho * 0.02),
+          margin: {
+            l: (ancho * 0.07),
+            r: (ancho * 0.025),
+            b: (alto * 0.10),
+            t: (alto * 0.10),
+          },
+          yaxis: {          
+            autorange:"reversed",                   
+          },
+          xaxis:{
+            side:"top",
+            ticks:"inside",   
+            title: 'DL',                
+          }, 
+          xaxis2:{
+            side:"top",
+            ticks:"inside",            
+            title: 'Azimuth',       
+          },     
+          xaxis3:{
+            side:"top",
+            ticks:"inside",            
+            title: 'Angulo',       
+          },       
+          grid: {    
+            columns: 3,
+            subplots:[['xy','x2y','x3y']],
+            roworder:'bottom to top'
+          }
+        }}
+      />
     </div>
   );
 };

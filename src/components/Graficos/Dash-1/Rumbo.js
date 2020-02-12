@@ -1,49 +1,126 @@
 import React, { useState, useEffect } from 'react';
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
-require('highcharts/modules/annotations')(Highcharts);
+import Plot from 'react-plotly.js';
 
-(function(H) {
-  H.wrap(H.Axis.prototype, 'render', function(proceed) {
-    var chart = this.chart,
-      otherAxis;
-
-    if (typeof this.options.crossing === 'number') {
-      otherAxis = chart[this.isXAxis ? 'yAxis' : 'xAxis'][0];
-      this.offset = otherAxis.toPixels(this.options.crossing, true);
-      chart.axisOffset[this.side] = 10;
-    }
-    proceed.call(this);
-  });
-})(Highcharts);
 
 ///import configuracion base del grafico
-import { ejeCruzado } from '../ConfigCharts';
 
-const Rumbo = ({ data }) => {
-  const [config, setConfig] = useState(ejeCruzado);
+
+const Rumbo = ({ data, alto, ancho }) => {
+  const [configuracion, setConfiguracion] = useState({
+    data: {}, config: {
+      ejes: {
+        xaxis: {
+        },
+        yaxis: {
+        }
+      }
+    }
+  })
 
   useEffect(() => {
-    if (data.Prog.length > 0) {
-      configurarGrafico();
+    calcularConfiguracion(data)
+  }, [data])
+
+  const calcularConfiguracion = (data) => {
+    let max = Math.max(...data.Prog.x, ...data.Prog.y, ...data.Real.x, ...data.Real.y)
+    let min = Math.min(...data.Prog.x, ...data.Prog.y, ...data.Real.x, ...data.Real.y)
+
+    let programa = {
+      x: [...data.Prog.x],
+      y: [...data.Prog.y],
+      mode: 'lines',
+      type: 'scatter', 
+      name:'Programa',
+      line: {
+        color: 'rgb(17, 53, 199)',
+        width: 2
+      }
     }
-  }, [data]);
 
-  const configurarGrafico = () => {
-    let aux = { ...config };
-    aux.series.push({ name: 'Real', data: [...data.Real] });
-    aux.series.push({ name: 'Prog', data: [...data.Prog] });
+    let real = {
+      x: [...data.Real.x],
+      y: [...data.Real.y],
+      mode: 'lines',
+      type: 'scatter',
+      name:'Real',
+      line: {
+        color: 'rgb(75, 142, 8)',
+        width: 2
+      }
+    }
 
-    setConfig(aux);
-  };
+
+
+    setConfiguracion({
+      data: {
+        programa,
+        real
+      },
+      config: {
+        ejes: {
+          xaxis: {
+            range: [(max * -1), max]
+          },
+          yaxis: {
+            range: [(max * -1), max]
+          }
+        }
+      }
+    })
+  }
+
 
   return (
-    <div  style={{ height: '100%', width: '100%' }}>     
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={config}        
+    <div>
+      <Plot
+        data={[
+          configuracion.data.programa,
+          configuracion.data.real,
+
+        ]}
+        layout={{
+          showlegend: false,
+          height: alto - (alto * 0.10),
+          width: ancho - (ancho * 0.02),
+          margin: {
+            l: (ancho * 0.07),
+            r: (ancho * 0.025),
+            b: (alto * 0.10),
+            t: (alto * 0.10),
+          },
+
+          annotations: [
+            {
+              x: 2,
+              y: 5,
+              xref: 'x',
+              yref: 'y',
+              text: 'max=5',
+              showarrow: true,
+              font: {
+                family: 'Courier New, monospace',
+                size: 16,
+                color: '#ffffff'
+              },
+              align: 'center',
+              arrowhead: 2,
+              arrowsize: 1,
+              arrowwidth: 2,
+              arrowcolor: '#636363',
+              ax: 20,
+              ay: -30,
+              bordercolor: '#c7c7c7',
+              borderwidth: 2,
+              borderpad: 4,
+              bgcolor: '#ff7f0e',
+              opacity: 0.8
+            }
+          ],
+          ...configuracion.config.ejes
+        }}
       />
     </div>
+
   );
 };
 
