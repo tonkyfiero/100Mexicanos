@@ -117,7 +117,7 @@ const Principal = () => {
       <div style={{ height: sizeScreen.height - 90 }}>
         <div className="row h-100" style={{ marginBottom: '5px', height: sizeScreen.height - 130 }}>
           <div className="col-xl-4 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={1}>
+            <Panel identificador={1} altura={(sizeScreen.height - 90)/2}>
               <PanelHeader>
                 <div>Vista en Planta</div>
               </PanelHeader>
@@ -127,9 +127,9 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={2}>
+            <Panel identificador={2} altura={(sizeScreen.height - 90)/2}>
               <PanelHeader>
-                <div>soy principal</div>
+                <div>#D</div>
               </PanelHeader>
               <PanelBody>
               <Grafico3D />
@@ -137,7 +137,7 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={3}>
+            <Panel identificador={3} altura={(sizeScreen.height - 90)/2}>
               <PanelHeader>
                 <div>Direccional</div>
               </PanelHeader>
@@ -147,7 +147,7 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={4}>
+            <Panel identificador={4} altura={(sizeScreen.height - 90)/2}>
               <PanelHeader>
                 <div>DL,Angulo,Azimuth</div>
               </PanelHeader>
@@ -157,9 +157,9 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={5}>
+            <Panel identificador={5} altura={(sizeScreen.height - 90)/2}>
               <PanelHeader>
-                <div>soy principal</div>
+                <div>Grafica de Avance</div>
               </PanelHeader>
               <PanelBody>
 
@@ -167,9 +167,9 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={6}>
+            <Panel identificador={6} altura={(sizeScreen.height - 90)/2}>
               <PanelHeader>
-                <div>soy principal</div>
+                <div>Tiempos Productivos</div>
               </PanelHeader>
               <PanelBody>
 

@@ -42,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <PageSettings.Provider value={this.state}>
-        <div>
+        <div style={{height:'100%'}}>
           <Header />
           <Sidebar />
           <Contenido />

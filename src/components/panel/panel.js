@@ -84,6 +84,9 @@ class Panel extends React.Component {
 
   render() {
     console.log(`${this.state.identificador} ${Date.now().toString()}`)
+    let stilo = {
+      height:this.state.expand ? '' : `${this.props.altura}px`
+    }
     return (
       <PanelStat.Provider value={this.state}>
         
@@ -98,7 +101,7 @@ class Panel extends React.Component {
               (this.state.expand ? 'panel-expand ' : ' ') +
               (this.state.reload ? 'panel-loading ' : ' ') +
               (this.props.className ? this.props.className : '')
-            }>
+            } style={stilo}>
             {this.props.children}            
           </div>
         )}

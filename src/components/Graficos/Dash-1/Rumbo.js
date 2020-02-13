@@ -7,7 +7,10 @@ import Plot from 'react-plotly.js';
 
 const Rumbo = ({ data, alto, ancho }) => {
   const [configuracion, setConfiguracion] = useState({
-    data: {}, config: {
+    data: {}, apoyos: {
+      max_ejes: 0,
+      min_ejes: 0
+    }, config: {
       ejes: {
         xaxis: {
         },
@@ -29,8 +32,8 @@ const Rumbo = ({ data, alto, ancho }) => {
       x: [...data.Prog.x],
       y: [...data.Prog.y],
       mode: 'lines',
-      type: 'scatter', 
-      name:'Programa',
+      type: 'scatter',
+      name: 'Programa',
       line: {
         color: 'rgb(17, 53, 199)',
         width: 2
@@ -42,7 +45,7 @@ const Rumbo = ({ data, alto, ancho }) => {
       y: [...data.Real.y],
       mode: 'lines',
       type: 'scatter',
-      name:'Real',
+      name: 'Real',
       line: {
         color: 'rgb(75, 142, 8)',
         width: 2
@@ -55,6 +58,10 @@ const Rumbo = ({ data, alto, ancho }) => {
       data: {
         programa,
         real
+      },
+      apoyos: {
+        max_ejes: max,
+        min_ejes: min
       },
       config: {
         ejes: {
@@ -91,11 +98,11 @@ const Rumbo = ({ data, alto, ancho }) => {
 
           annotations: [
             {
-              x: 2,
-              y: 5,
+              x: 0,
+              y: (configuracion.apoyos.max_ejes - 50),
               xref: 'x',
               yref: 'y',
-              text: 'max=5',
+              text: 'Norte',
               showarrow: true,
               font: {
                 family: 'Courier New, monospace',
@@ -107,14 +114,88 @@ const Rumbo = ({ data, alto, ancho }) => {
               arrowsize: 1,
               arrowwidth: 2,
               arrowcolor: '#636363',
-              ax: 20,
-              ay: -30,
+              ax: 0,
+              ay: 0,
               bordercolor: '#c7c7c7',
               borderwidth: 2,
               borderpad: 4,
               bgcolor: '#ff7f0e',
-              opacity: 0.8
-            }
+              
+            },
+            {
+              x: 0,
+              y: ((configuracion.apoyos.max_ejes - 50)*-1),
+              xref: 'x',
+              yref: 'y',
+              text: 'Sur',
+              showarrow: true,
+              font: {
+                family: 'Courier New, monospace',
+                size: 16,
+                color: '#ffffff'
+              },
+              align: 'center',
+              arrowhead: 2,
+              arrowsize: 1,
+              arrowwidth: 2,
+              arrowcolor: '#636363',
+              ax: 0,
+              ay: 0,
+              bordercolor: '#c7c7c7',
+              borderwidth: 2,
+              borderpad: 4,
+              bgcolor: '#ff7f0e',
+              
+            },
+            {
+              x: (configuracion.apoyos.max_ejes - 50),
+              y: 0,
+              xref: 'x',
+              yref: 'y',
+              text: 'Este',
+              showarrow: true,
+              font: {
+                family: 'Courier New, monospace',
+                size: 16,
+                color: '#ffffff'
+              },
+              align: 'center',
+              arrowhead: 2,
+              arrowsize: 1,
+              arrowwidth: 2,
+              arrowcolor: '#636363',
+              ax: 0,
+              ay: 0,
+              bordercolor: '#c7c7c7',
+              borderwidth: 2,
+              borderpad: 4,
+              bgcolor: '#ff7f0e',
+              
+            }, {
+              x: ((configuracion.apoyos.max_ejes - 50)*-1),
+              y: 0,
+              xref: 'x',
+              yref: 'y',
+              text: 'Oeste',
+              showarrow: true,
+              font: {
+                family: 'Courier New, monospace',
+                size: 16,
+                color: '#ffffff'
+              },
+              align: 'center',
+              arrowhead: 2,
+              arrowsize: 1,
+              arrowwidth: 2,
+              arrowcolor: '#636363',
+              ax: 0,
+              ay: 0,
+              bordercolor: '#c7c7c7',
+              borderwidth: 2,
+              borderpad: 4,
+              bgcolor: '#ff7f0e',              
+            },
+            
           ],
           ...configuracion.config.ejes
         }}
