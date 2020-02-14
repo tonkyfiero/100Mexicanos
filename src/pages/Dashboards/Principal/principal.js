@@ -9,6 +9,8 @@ import Rumbo from '../../../components/Graficos/Dash-1/Rumbo';
 import Direccional from '../../../components/Graficos/Dash-1/Direccional';
 import Tres from '../../../components/Graficos/Dash-1/Tres';
 import Grafico3D from '../../../components/Graficos/Dash-1/Grafico3d';
+import Pie from '../../../components/Graficos/Dash-1/Pie';
+import GraficaAvance from '../../../components/Graficos/Dash-1/GraficaAvance'
 
 //import css
 import './principal.css';
@@ -60,16 +62,16 @@ const Principal = () => {
   };
 
   const generarDataSeries = (resData) => {
-    let rumbo = { Prog: {x:[],y:[]}, Real: {x:[],y:[]} };
-    let direccional = { Prog: {x:[],y:[]}, Real: {x:[],y:[]} };
+    let rumbo = { Prog: { x: [], y: [] }, Real: { x: [], y: [] } };
+    let direccional = { Prog: { x: [], y: [] }, Real: { x: [], y: [] } };
     let data_tres = {
-      angulo: { Prog: {x:[],y:[]}, Real: {x:[],y:[]} },
-      az: { Prog: {x:[],y:[]}, Real: {x:[],y:[]} },
-      dl: { Prog: {x:[],y:[]}, Real: {x:[],y:[]} },
+      angulo: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
+      az: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
+      dl: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
     };
 
     resData.Programa.forEach((element, i) => {
-      
+
 
       rumbo.Prog.x.push(parseFloat(element.NS));
       rumbo.Prog.y.push(parseFloat(element.EW));
@@ -117,37 +119,37 @@ const Principal = () => {
       <div style={{ height: sizeScreen.height - 90 }}>
         <div className="row h-100" style={{ marginBottom: '5px', height: sizeScreen.height - 130 }}>
           <div className="col-xl-4 col-sm-12 px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={1} altura={(sizeScreen.height - 90)/2}>
+            <Panel identificador={1} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
                 <div>Vista en Planta</div>
               </PanelHeader>
               <PanelBody>
-              <Rumbo data={data.rumbo} />
+                <Rumbo data={data.rumbo} />
               </PanelBody>
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={2} altura={(sizeScreen.height - 90)/2}>
+            <Panel identificador={2} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
                 <div>#D</div>
               </PanelHeader>
               <PanelBody>
-              <Grafico3D />
+                <Grafico3D />
               </PanelBody>
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={3} altura={(sizeScreen.height - 90)/2}>
+            <Panel identificador={3} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
                 <div>Direccional</div>
               </PanelHeader>
               <PanelBody>
-              <Direccional data={data.direccional} />
+                <Direccional data={data.direccional} />
               </PanelBody>
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={4} altura={(sizeScreen.height - 90)/2}>
+            <Panel identificador={4} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
                 <div>DL,Angulo,Azimuth</div>
               </PanelHeader>
@@ -157,22 +159,22 @@ const Principal = () => {
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={5} altura={(sizeScreen.height - 90)/2}>
+            <Panel identificador={5} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
                 <div>Grafica de Avance</div>
               </PanelHeader>
               <PanelBody>
-
+                <Pie />
               </PanelBody>
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
-            <Panel identificador={6} altura={(sizeScreen.height - 90)/2}>
+            <Panel identificador={6} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
                 <div>Tiempos Productivos</div>
               </PanelHeader>
               <PanelBody>
-
+                <GraficaAvance />
               </PanelBody>
             </Panel>
           </div>
