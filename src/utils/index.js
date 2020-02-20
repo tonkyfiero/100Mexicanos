@@ -23,6 +23,12 @@ export const filterByKeyValueError = (key, valor, obj) => {
   }
 };
 
+
+/**
+ * @description recibe una cadena de texto que puede contener acentos y retorna sin acentos y minuscula
+ * @param {string} s texto para quitarle acentos 
+ * @returns {string} regresa el valor en minusculas y sin acentos
+ */
 export const quitaAcentos = (s) => {
   let cadena = s.toLowerCase();
   cadena = cadena.replace(/á/gi, 'a');
@@ -51,6 +57,14 @@ export const findDataByKeyValue = (obj, keyF, KeyR, value) => {
   return null;
 };
 
+
+/**
+ * 
+ * @param {date} fecha fecha a buscar
+ * @param {date} fechaIni fecha inicio del rango de busqueda
+ * @param {data} fechaFin fecha fin del rango de busqueda
+ * @returns {boolean} retorna true si la fecha esta dentro del rango
+ */
 export const dentroRangoFechas = (fecha, fechaIni, fechaFin) => {
   if (fecha >= fechaIni && fecha <= fechaFin) {
     return true;
@@ -100,3 +114,24 @@ export const generateOptionForReactSelect = (data, keyText, keyValue) => {
   });
   return opciones
 };
+
+/**
+ * @description regresa un array con los datos unicos de un json
+ * @param {json} data informacion que tiene formato json
+ * @param {*} key miembro del json donde vamos a buscar
+ * @returns {Array} retorna un array con los valores unicso en el json
+ */
+export const valoresUnicos = (data,key) => {
+
+  let unicosDato = []
+
+  for (let i = 0; i < data.length; i++) {
+    if (unicosDato.indexOf(data[i][key] === -1)) {
+      unicosDato.push(data[i][key])
+    }
+    
+    return unicosDato
+    
+  }
+
+}

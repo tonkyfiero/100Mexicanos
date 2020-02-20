@@ -6,6 +6,8 @@ import { PageSettings } from '../../../config/page-settings';
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import logo_UV from '../../../assets/imagenes/logo_uv.jpg';
+
 const useStyles = makeStyles({
   root: {
     backgroundColor: '#fff',
@@ -32,7 +34,7 @@ const useStyles = makeStyles({
   navHeader: {
     display: 'flex',
     alignItems: 'center',
-    width: '220px',
+    width: '500px',
     '& a:hover': {
       cursor: 'pointer',
     },
@@ -52,6 +54,8 @@ const useStyles = makeStyles({
     flexDirection: 'row',
     display: 'flex',
     marginLeft: 'auto',
+    paddingTop: '2px',
+    paddingBottom: '2px',
   },
 });
 
@@ -60,21 +64,15 @@ const Header = () => {
 
   return (
     <PageSettings.Consumer>
-      {({handleViewSideBar}) => (
+      {({ handleViewSideBar }) => (
         <div id="header" className={classes.root}>
           <div className={classes.navHeader}>
-            <a className={classes.linkNavHeader} onClick={()=> handleViewSideBar()}>
+            <a className={classes.linkNavHeader} onClick={() => handleViewSideBar()}>
               <i className={clsx(classes.navLogo, 'fas fa-bars')}></i>
-              <b style={{ fontWeight: '700' }}>Bloque Norte 02</b>
-            </a>
+              <img style={{ maxWidth: '100%', maxHeight: '100%' }} src={logo_UV} alt="" />
+              <b style={{ fontWeight: '700' }}>Universidad Veracruzana</b>
+            </a>            
           </div>
-          <ul className={classes.linkToolBar}>
-            <li>uno</li>
-            <li>dos</li>
-            <li>tres</li>
-            <li>cuatro</li>
-            <li>cinco</li>
-          </ul>
         </div>
       )}
     </PageSettings.Consumer>

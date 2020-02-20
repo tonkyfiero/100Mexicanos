@@ -21,7 +21,9 @@ const Principal = () => {
   const [data, setData] = useState({
     rumbo: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
     direccional: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
+    graficaAvance: { Prog: { x: [], y: [] }, Real: { x: [], y: [] }, Limpio: { x: [], y: [] } },
     data_tres: { angulo: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } }, az: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } }, dl: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } } },
+    grafica3D: { Prog: { x: [], y: [], z: [] }, Real: { x: [], y: [], z: [] } },
   });
 
   useEffect(() => {
@@ -70,6 +72,11 @@ const Principal = () => {
       dl: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
     };
 
+    let graficaAvance = { Prog: { x: [], y: [] }, Real: { x: [], y: [] }, Limpio: { x: [], y: [] } }
+    let grafica3D = { Prog: { x: [], y: [], z: [] }, Real: { x: [], y: [], z: [] } }
+
+    let auxTiempoLimpio = 0
+
     resData.Programa.forEach((element, i) => {
 
 
@@ -89,6 +96,12 @@ const Principal = () => {
 
       data_tres.dl.Prog.x.push(parseFloat(element.DL));
       data_tres.dl.Prog.y.push(parseFloat(element.ProfMD));
+      //-----------------------------------------------------
+
+      grafica3D.Prog.z.push(parseFloat(element.TVD))
+      grafica3D.Prog.x.push(parseFloat(element.NS))
+      grafica3D.Prog.y.push(parseFloat(element.EW))
+
     });
 
     resData.Real.forEach((element, i) => {
@@ -109,9 +122,31 @@ const Principal = () => {
 
       data_tres.dl.Real.x.push(parseFloat(element.DL));
       data_tres.dl.Real.y.push(parseFloat(element.ProfMD));
+
+      //------------------------------------------------------------   
+
+      grafica3D.Real.z.push(parseFloat(element.TVD))
+      grafica3D.Real.x.push(parseFloat(element.NS))
+      grafica3D.Real.y.push(parseFloat(element.EW))
     });
 
-    setData({ rumbo, direccional, data_tres });
+    resData.OperacionesPro.forEach((element, i) => {
+      graficaAvance.Prog.x.push(parseFloat(element.tiempoAcum))
+      graficaAvance.Prog.y.push(parseFloat(element.profundidad))
+    })
+
+    resData.OperacionesReales.forEach((element, i) => {
+      graficaAvance.Real.x.push(parseFloat(element.tiempoAcum))
+      graficaAvance.Real.y.push(parseFloat(element.profundidad))
+
+      if (element.npt == 1) {
+        auxTiempoLimpio = auxTiempoLimpio + parseFloat(element.tiempo)
+        graficaAvance.Limpio.x.push(parseFloat(auxTiempoLimpio))
+        graficaAvance.Limpio.y.push(parseFloat(element.profundidad))
+      }
+    })
+
+    setData({ rumbo, direccional, data_tres, graficaAvance,grafica3D });
   };
 
   return (
@@ -131,10 +166,10 @@ const Principal = () => {
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel identificador={2} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
-                <div>#D</div>
+                <div>3D</div>
               </PanelHeader>
               <PanelBody>
-                <Grafico3D />
+                <Grafico3D data={data.grafica3D}/>
               </PanelBody>
             </Panel>
           </div>
@@ -161,7 +196,7 @@ const Principal = () => {
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel identificador={5} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
-                <div>Grafica de Avance</div>
+                <div>Tiempos Productivos</div>
               </PanelHeader>
               <PanelBody>
                 <Pie />
@@ -171,10 +206,10 @@ const Principal = () => {
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel identificador={6} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
-                <div>Tiempos Productivos</div>
+                <div>Grafica de Avances</div>
               </PanelHeader>
               <PanelBody>
-                <GraficaAvance />
+                <GraficaAvance data={data.graficaAvance} />
               </PanelBody>
             </Panel>
           </div>

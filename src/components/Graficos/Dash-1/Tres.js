@@ -138,7 +138,7 @@ const Tres = ({ data, alto, ancho }) => {
           configuracion.data         
         }
         layout={{          
-          height: alto - (alto * 0.10),
+          height: alto - (alto * 0.05),
           width: ancho - (ancho * 0.02),
           margin: {
             l: (ancho * 0.07),

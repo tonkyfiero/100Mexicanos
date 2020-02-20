@@ -50,7 +50,7 @@ const Direccional = ({ data,alto,ancho }) => {
           margin: {
             l: (ancho * 0.07),
             r: (ancho * 0.025),
-            b: (alto * 0.10),
+            b: (alto * 0.05),
             t: (alto * 0.10),
           },
           yaxis: {          
