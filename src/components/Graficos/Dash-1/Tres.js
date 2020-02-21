@@ -2,8 +2,10 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 import { Legend } from 'highcharts';
 
+import Spinner from '../Dash-1/Spinner'
 
-const Tres = ({ data, alto, ancho }) => {
+
+const Tres = ({ data, loading, alto, ancho }) => {
   const [configuracion, setConfiguracion] = useState({
     data: {}
   }
@@ -29,7 +31,7 @@ const Tres = ({ data, alto, ancho }) => {
       mode: 'lines',
       type: 'scatter',
       legendgroup: 'Programa',
-      name:'Programa',
+      name: 'Programa',
       line: {
         color: 'rgb(17, 53, 199)',
         width: 2
@@ -42,7 +44,7 @@ const Tres = ({ data, alto, ancho }) => {
       mode: 'lines',
       type: 'scatter',
       legendgroup: 'Real',
-      name:'Real',
+      name: 'Real',
       line: {
         color: 'rgb(75, 142, 8)',
         width: 2
@@ -58,8 +60,8 @@ const Tres = ({ data, alto, ancho }) => {
       type: 'scatter',
       xaxis: 'x2',
       yaxis: 'y',
-      legendgroup: 'Real',      
-      name:'Real',
+      legendgroup: 'Real',
+      name: 'Real',
       showlegend: false,
       line: {
         color: 'rgb(75, 142, 8)',
@@ -75,7 +77,7 @@ const Tres = ({ data, alto, ancho }) => {
       xaxis: 'x2',
       yaxis: 'y',
       legendgroup: 'Programa',
-      name:'Programa',
+      name: 'Programa',
       showlegend: false,
       line: {
         color: 'rgb(17, 53, 199)',
@@ -93,7 +95,7 @@ const Tres = ({ data, alto, ancho }) => {
       xaxis: 'x3',
       yaxis: 'y',
       legendgroup: 'Real',
-      name:'Real',
+      name: 'Real',
       showlegend: false,
       line: {
         color: 'rgb(75, 142, 8)',
@@ -109,7 +111,7 @@ const Tres = ({ data, alto, ancho }) => {
       xaxis: 'x3',
       yaxis: 'y',
       legendgroup: 'Programa',
-      name:'Programa',
+      name: 'Programa',
       showlegend: false,
       line: {
         color: 'rgb(17, 53, 199)',
@@ -126,52 +128,53 @@ const Tres = ({ data, alto, ancho }) => {
         realAngulo,
         programaAz,
         realAz,
-      ],     
+      ],
     })
   }
 
 
   return (
-    <div>
-      <Plot
-        data={
-          configuracion.data         
-        }
-        layout={{          
-          height: alto - (alto * 0.05),
-          width: ancho - (ancho * 0.02),
-          margin: {
-            l: (ancho * 0.07),
-            r: (ancho * 0.025),
-            b: (alto * 0.10),
-            t: (alto * 0.10),
-          },
-          yaxis: {          
-            autorange:"reversed",                   
-          },
-          xaxis:{
-            side:"top",
-            ticks:"inside",   
-            title: 'DL',                
-          }, 
-          xaxis2:{
-            side:"top",
-            ticks:"inside",            
-            title: 'Azimuth',       
-          },     
-          xaxis3:{
-            side:"top",
-            ticks:"inside",            
-            title: 'Angulo',       
-          },       
-          grid: {    
-            columns: 3,
-            subplots:[['xy','x2y','x3y']],
-            roworder:'bottom to top'
+    loading ? <Spinner alto={alto} ancho={ancho}/> :
+      <div>
+        <Plot
+          data={
+            configuracion.data
           }
-        }}
-      />
-    </div>
+          layout={{
+            height: alto - (alto * 0.05),
+            width: ancho - (ancho * 0.02),
+            margin: {
+              l: (ancho * 0.07),
+              r: (ancho * 0.025),
+              b: (alto * 0.10),
+              t: (alto * 0.10),
+            },
+            yaxis: {
+              autorange: "reversed",
+            },
+            xaxis: {
+              side: "top",
+              ticks: "inside",
+              title: 'DL',
+            },
+            xaxis2: {
+              side: "top",
+              ticks: "inside",
+              title: 'Azimuth',
+            },
+            xaxis3: {
+              side: "top",
+              ticks: "inside",
+              title: 'Angulo',
+            },
+            grid: {
+              columns: 3,
+              subplots: [['xy', 'x2y', 'x3y']],
+              roworder: 'bottom to top'
+            }
+          }}
+        />
+      </div>
   );
 };
 

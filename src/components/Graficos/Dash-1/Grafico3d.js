@@ -1,6 +1,8 @@
 import React, { Component, createRef, useState, useRef, useEffect, useCallback } from 'react';
 import Plot from 'react-plotly.js';
 
+import Spinner from '../Dash-1/Spinner'
+
 class Grafico3D extends Component {
   constructor(props) {
     super(props);
@@ -15,8 +17,9 @@ class Grafico3D extends Component {
   }  
 
   render() {
-    const { alto, ancho, expand } = this.props;    
+    const { alto, ancho, expand,loading } = this.props;    
     return (
+      loading ? <Spinner alto={alto} ancho={ancho} /> :
       <div>
         <Plot
           data={[

@@ -24,6 +24,7 @@ const Principal = () => {
     graficaAvance: { Prog: { x: [], y: [] }, Real: { x: [], y: [] }, Limpio: { x: [], y: [] } },
     data_tres: { angulo: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } }, az: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } }, dl: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } } },
     grafica3D: { Prog: { x: [], y: [], z: [] }, Real: { x: [], y: [], z: [] } },
+    loading:true
   });
 
   useEffect(() => {
@@ -146,7 +147,7 @@ const Principal = () => {
       }
     })
 
-    setData({ rumbo, direccional, data_tres, graficaAvance,grafica3D });
+    setData({ rumbo, direccional, data_tres, graficaAvance,grafica3D,loading:false });
   };
 
   return (
@@ -159,7 +160,7 @@ const Principal = () => {
                 <div>Vista en Planta</div>
               </PanelHeader>
               <PanelBody>
-                <Rumbo data={data.rumbo} />
+                <Rumbo data={data.rumbo} loading={data.loading} />                
               </PanelBody>
             </Panel>
           </div>
@@ -169,7 +170,7 @@ const Principal = () => {
                 <div>3D</div>
               </PanelHeader>
               <PanelBody>
-                <Grafico3D data={data.grafica3D}/>
+                <Grafico3D data={data.grafica3D} loading={data.loading} />
               </PanelBody>
             </Panel>
           </div>
@@ -179,7 +180,7 @@ const Principal = () => {
                 <div>Direccional</div>
               </PanelHeader>
               <PanelBody>
-                <Direccional data={data.direccional} />
+                <Direccional data={data.direccional} loading={data.loading} />
               </PanelBody>
             </Panel>
           </div>
@@ -189,7 +190,7 @@ const Principal = () => {
                 <div>DL,Angulo,Azimuth</div>
               </PanelHeader>
               <PanelBody>
-                <Tres data={data.data_tres} />
+                <Tres data={data.data_tres} loading={data.loading} />
               </PanelBody>
             </Panel>
           </div>
@@ -199,17 +200,17 @@ const Principal = () => {
                 <div>Tiempos Productivos</div>
               </PanelHeader>
               <PanelBody>
-                <Pie />
+                <Pie loading={data.loading} />
               </PanelBody>
             </Panel>
           </div>
           <div className="col-xl-4  px-xl-1 py-xl-1 px-md-1 py-md-1">
             <Panel identificador={6} altura={(sizeScreen.height - 90) / 2}>
               <PanelHeader>
-                <div>Grafica de Avances</div>
+                <div>Grafica de Avance</div>
               </PanelHeader>
               <PanelBody>
-                <GraficaAvance data={data.graficaAvance} />
+                <GraficaAvance data={data.graficaAvance} loading={data.loading} />
               </PanelBody>
             </Panel>
           </div>
