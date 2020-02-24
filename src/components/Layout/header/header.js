@@ -4,10 +4,12 @@ import useReactRouter from 'use-react-router';
 
 ///import contexto
 import { PageSettings } from '../../../config/page-settings';
-
 import { makeStyles } from '@material-ui/core/styles';
-
 import logo_UV from '../../../assets/imagenes/logo_uv.jpg';
+
+//import devComponents
+
+import SelectorPozos from '../../Graficos/Dash-1/SelectorPozo'
 
 const useStyles = makeStyles({
   root: {
@@ -80,19 +82,7 @@ const Header = ({ props }) => {
           </div>
           {
             location.pathname == '/dashboard/principal' ? <div className={classes.linkToolBar}>
-              <select class="form-control" id="selectGrado">
-                <option>selecciona pozo</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-                <option>Coapechaca 5980</option>
-              </select>
+              <SelectorPozos />
             </div> : <span></span>
           }
 

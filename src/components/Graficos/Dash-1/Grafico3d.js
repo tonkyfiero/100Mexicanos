@@ -1,53 +1,54 @@
 import React, { Component, createRef, useState, useRef, useEffect, useCallback } from 'react';
 import Plot from 'react-plotly.js';
 
-import Spinner from '../Dash-1/Spinner'
+import Spinner from '../Dash-1/Spinner';
 
 class Grafico3D extends Component {
   constructor(props) {
     super(props);
-    this.state={}
+    this.state = {};
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.setState({
-      alto:this.props.alto,
-      ancho:this.props.ancho
-    })
-  }  
+      alto: this.props.alto,
+      ancho: this.props.ancho,
+    });
+  }
 
   render() {
-    const { alto, ancho, expand,loading } = this.props;    
-    return (
-      loading ? <Spinner alto={alto} ancho={ancho} /> :
+    const { alto, ancho, expand, loading } = this.props;
+    return loading ? (
+      <Spinner alto={alto} ancho={ancho} />
+    ) : (
       <div>
         <Plot
           data={[
             {
-              x: [
-                ...this.props.data.Real.x
-              ],
+              x: [...this.props.data.Real.x],
               y: [...this.props.data.Real.y],
               z: [...this.props.data.Real.z],
               type: 'scatter3d',
               mode: 'lines',
-              line: { width: 5 },
+              name: 'Real',
+              line: { width: 5, color: 'rgb(75, 142, 8)' },
+              hovertemplate:'<i>TVD</i>:%{z}' + '<br><i>NS</i>: %{x}' + '<br><i>EW</i>: %{y}'
             },
             {
-              x: [
-                ...this.props.data.Prog.x
-              ],
+              x: [...this.props.data.Prog.x],
               y: [...this.props.data.Prog.y],
               z: [...this.props.data.Prog.z],
               type: 'scatter3d',
               mode: 'lines',
-              line: { width: 5 },
+              name: 'Programa',
+              line: { width: 5, color: 'rgb(17, 53, 199)' },
+              hovertemplate:'<i>TVD</i>:%{z}' + '<br><i>NS</i>: %{x}' + '<br><i>EW</i>: %{y}'
             },
           ]}
           layout={{
-            showlegend: false,
-            height: alto - (alto*0.10),
-            width: ancho - (ancho*0.02),
+            showlegend: false,            
+            height: alto - alto * 0.1,
+            width: ancho - ancho * 0.02,
             margin: {
               l: 10,
               r: 10,

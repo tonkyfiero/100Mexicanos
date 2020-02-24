@@ -83,7 +83,7 @@ class Panel extends React.Component {
   };
 
   render() {
-    console.log(`${this.state.identificador} ${Date.now().toString()}`)
+    // console.log(`${this.state.identificador} ${Date.now().toString()}`)
     let stilo = {
       height:this.state.expand ? '' : `${this.props.altura}px`
     }

@@ -2,27 +2,22 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 import { Legend } from 'highcharts';
 
-import Spinner from '../Dash-1/Spinner'
-
+import Spinner from '../Dash-1/Spinner';
 
 const Tres = ({ data, loading, alto, ancho }) => {
   const [configuracion, setConfiguracion] = useState({
-    data: {}
-  }
-  )
+    data: {},
+  });
 
   useEffect(() => {
-    calcularConfiguracion(data)
-  }, [data])
+    calcularConfiguracion(data);
+  }, [data]);
 
   const calcularConfiguracion = (data) => {
     // let max = Math.max(...data.Prog.x, ...data.Prog.y, ...data.Real.x, ...data.Real.y)
     // let min = Math.min(...data.Prog.x, ...data.Prog.y, ...data.Real.x, ...data.Real.y)
 
-
     // angulo,az,dl
-
-
 
     ///---Dog Leg data---------------------
     let programaDL = {
@@ -34,10 +29,9 @@ const Tres = ({ data, loading, alto, ancho }) => {
       name: 'Programa',
       line: {
         color: 'rgb(17, 53, 199)',
-        width: 2
-      }
-
-    }
+        width: 2,
+      },
+    };
     let realDL = {
       x: [...data.dl.Real.x],
       y: [...data.dl.Real.y],
@@ -47,9 +41,9 @@ const Tres = ({ data, loading, alto, ancho }) => {
       name: 'Real',
       line: {
         color: 'rgb(75, 142, 8)',
-        width: 2
-      }
-    }
+        width: 2,
+      },
+    };
 
     //----------azimunt data------------------------
 
@@ -65,9 +59,9 @@ const Tres = ({ data, loading, alto, ancho }) => {
       showlegend: false,
       line: {
         color: 'rgb(75, 142, 8)',
-        width: 2
-      }
-    }
+        width: 2,
+      },
+    };
 
     let programaAz = {
       x: [...data.az.Prog.x],
@@ -81,10 +75,9 @@ const Tres = ({ data, loading, alto, ancho }) => {
       showlegend: false,
       line: {
         color: 'rgb(17, 53, 199)',
-        width: 2
-      }
-    }
-
+        width: 2,
+      },
+    };
 
     //-----data angulo----------------------------------------------
     let realAngulo = {
@@ -99,9 +92,9 @@ const Tres = ({ data, loading, alto, ancho }) => {
       showlegend: false,
       line: {
         color: 'rgb(75, 142, 8)',
-        width: 2
-      }
-    }
+        width: 2,
+      },
+    };
 
     let programaAngulo = {
       x: [...data.angulo.Prog.x],
@@ -115,66 +108,62 @@ const Tres = ({ data, loading, alto, ancho }) => {
       showlegend: false,
       line: {
         color: 'rgb(17, 53, 199)',
-        width: 2
-      }
-
-    }
+        width: 2,
+      },
+    };
 
     setConfiguracion({
-      data: [
-        programaDL,
-        realDL,
-        programaAngulo,
-        realAngulo,
-        programaAz,
-        realAz,
-      ],
-    })
-  }
+      data: [programaDL, realDL, programaAngulo, realAngulo, programaAz, realAz],
+    });
+  };
 
-
-  return (
-    loading ? <Spinner alto={alto} ancho={ancho}/> :
-      <div>
-        <Plot
-          data={
-            configuracion.data
-          }
-          layout={{
-            height: alto - (alto * 0.05),
-            width: ancho - (ancho * 0.02),
-            margin: {
-              l: (ancho * 0.07),
-              r: (ancho * 0.025),
-              b: (alto * 0.10),
-              t: (alto * 0.10),
-            },
-            yaxis: {
-              autorange: "reversed",
-            },
-            xaxis: {
-              side: "top",
-              ticks: "inside",
-              title: 'DL',
-            },
-            xaxis2: {
-              side: "top",
-              ticks: "inside",
-              title: 'Azimuth',
-            },
-            xaxis3: {
-              side: "top",
-              ticks: "inside",
-              title: 'Angulo',
-            },
-            grid: {
-              columns: 3,
-              subplots: [['xy', 'x2y', 'x3y']],
-              roworder: 'bottom to top'
-            }
-          }}
-        />
-      </div>
+  return loading ? (
+    <Spinner alto={alto} ancho={ancho} />
+  ) : (
+    <div>
+      <Plot
+        data={configuracion.data}
+        layout={{
+          showlegend: true,
+          legend: {
+            x: 1,
+            xanchor: 'right',
+            y: 1,
+          },
+          height: alto - alto * 0.1,
+          width: ancho - ancho * 0.02,
+          margin: {
+            l: ancho * 0.07,
+            r: ancho * 0.025,
+            b: alto * 0.05,
+            t: alto * 0.09,
+          },
+          yaxis: {
+            autorange: 'reversed',
+          },
+          xaxis: {
+            side: 'top',
+            ticks: 'inside',
+            title: 'DL',
+          },
+          xaxis2: {
+            side: 'top',
+            ticks: 'inside',
+            title: 'Azimuth',
+          },
+          xaxis3: {
+            side: 'top',
+            ticks: 'inside',
+            title: 'Angulo',
+          },
+          grid: {
+            columns: 3,
+            subplots: [['xy', 'x2y', 'x3y']],
+            roworder: 'bottom to top',
+          },
+        }}
+      />
+    </div>
   );
 };
 

@@ -29,11 +29,19 @@ class App extends Component {
       }));
     };
 
+    this.setIdPozoDireccional = (valor) => {
+      this.setState((state) => ({
+        idPozoDireccional: valor,
+      }));
+    };
+
     this.state = {
       prueba: true,
+      idPozoDireccional:0,
       viewSidebar: false,
       handleViewSideBar: this.handleViewSideBar,
       funcionPrueba: this.handlePrueba,
+      setIdPozoDireccional:this.setIdPozoDireccional,
       height: window.innerHeight,
       width: window.innerWidth,
     };
