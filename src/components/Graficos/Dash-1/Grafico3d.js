@@ -28,21 +28,23 @@ class Grafico3D extends Component {
               x: [...this.props.data.Real.x],
               y: [...this.props.data.Real.y],
               z: [...this.props.data.Real.z],
+              customdata: [...this.props.data.Real.md],
               type: 'scatter3d',
               mode: 'lines',
               name: 'Real',
               line: { width: 5, color: 'rgb(75, 142, 8)' },
-              hovertemplate:'<i>TVD</i>:%{z}' + '<br><i>NS</i>: %{x}' + '<br><i>EW</i>: %{y}'
+              hovertemplate:'<i>TVD</i>:%{z}' + '<br><i>NS</i>: %{x}' + '<br><i>EW</i>: %{y} ' + '<br><i>MD</i>:  %{customdata}'
             },
             {
               x: [...this.props.data.Prog.x],
               y: [...this.props.data.Prog.y],
               z: [...this.props.data.Prog.z],
+              customdata: [...this.props.data.Prog.md],
               type: 'scatter3d',
               mode: 'lines',
               name: 'Programa',
               line: { width: 5, color: 'rgb(17, 53, 199)' },
-              hovertemplate:'<i>TVD</i>:%{z}' + '<br><i>NS</i>: %{x}' + '<br><i>EW</i>: %{y}'
+              hovertemplate:'<i>TVD</i>:%{z}' + '<br><i>NS</i>: %{x}' + '<br><i>EW</i>: %{y}' + '<br><i>MD</i>:  %{customdata}'
             },
           ]}
           layout={{

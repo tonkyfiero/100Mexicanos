@@ -31,7 +31,7 @@ const Principal = () => {
       az: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
       dl: { Prog: { x: [], y: [] }, Real: { x: [], y: [] } },
     },
-    grafica3D: { Prog: { x: [], y: [], z: [] }, Real: { x: [], y: [], z: [] } },
+    grafica3D: { Prog: { x: [], y: [], z: [],md:[] }, Real: { x: [], y: [], z: [],md:[] } },
     loading: true,
   });
 
@@ -90,7 +90,7 @@ const Principal = () => {
     };
 
     let graficaAvance = { Prog: { x: [], y: [] }, Real: { x: [], y: [] }, Limpio: { x: [], y: [] } };
-    let grafica3D = { Prog: { x: [], y: [], z: [] }, Real: { x: [], y: [], z: [] } };
+    let grafica3D = { Prog: { x: [], y: [], z: [],md:[]  }, Real: { x: [], y: [], z: [],md:[]  } };
 
     let auxTiempoLimpio = 0;
 
@@ -115,6 +115,8 @@ const Principal = () => {
       grafica3D.Prog.z.push(parseFloat(element.TVD));
       grafica3D.Prog.x.push(parseFloat(element.NS));
       grafica3D.Prog.y.push(parseFloat(element.EW));
+      grafica3D.Prog.md.push(parseFloat(element.ProfMD));
+      
     });
 
     resData.Real.forEach((element, i) => {
@@ -141,6 +143,7 @@ const Principal = () => {
       grafica3D.Real.z.push(parseFloat(element.TVD));
       grafica3D.Real.x.push(parseFloat(element.NS));
       grafica3D.Real.y.push(parseFloat(element.EW));
+      grafica3D.Real.md.push(parseFloat(element.ProfMD));      
     });
 
     resData.OperacionesPro.forEach((element, i) => {
@@ -212,7 +215,7 @@ const Principal = () => {
                 <div>Tiempos Productivos</div>
               </PanelHeader>
               <PanelBody>
-                <Pie loading={data.loading} />
+                <Pie loading={data.loading} numero={idPozoDireccional}/>
               </PanelBody>
             </Panel>
           </div>

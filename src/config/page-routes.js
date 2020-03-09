@@ -24,6 +24,8 @@ import Pozos_CreUp from '../pages/Catalogos/Pozos/CreUp'
 
 ///seguimiento
 import Actividad from '../pages/Seguimiento/ActividadFisica/CreUpAF'
+import Direccional from '../pages/Seguimiento/Direccional/indexDireccional'
+import Bitacora from '../pages/Seguimiento/Bitacora/indexBitacora'
 
 
 //dashboards 
@@ -127,6 +129,18 @@ const routes = [
         exact:'true',
         title:'Actividad',
         component: () => <Actividad />
+    },
+    {
+        path:'/seguimiento/direccional',
+        exact:'true',
+        title:'Direccional',
+        component: () => <Direccional />
+    },
+    {
+        path:'/seguimiento/bitacora',
+        exact:'true',
+        title:'Bitacota',
+        component: () => <Bitacora />
     },
     
 ]

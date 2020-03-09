@@ -22,8 +22,8 @@ const Menu = [
         { path: '/seguimiento/actividad', title: 'Actividad' },
         { path: '/seguimiento/bitacora', title: 'Bitacora' },
         { path: '/seguimiento/direccional', title: 'Direccional' },
-        { path: '/seguimiento/operativo', title: 'Operativo' },
-        { path: '/seguimiento/costos', title: 'Costos' },        
+        // { path: '/seguimiento/operativo', title: 'Operativo' },
+        // { path: '/seguimiento/costos', title: 'Costos' },        
       ]
     },
     // { path: '/widgets', icon: 'fab fa-simplybuilt', title: 'Widgets', label: 'NEW' },

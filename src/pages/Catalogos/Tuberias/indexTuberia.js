@@ -40,6 +40,20 @@ const IndexMacroperas = () => {
                   </tr>
                 </thead>
                 <tbody>
+                <tr>
+                    <td>16</td>
+                    <td>K-55</td>
+                    <td>84</td>
+                    <td>BCN</td>
+                    <td className="with-btn" nowrap="">
+                      <a href="#" className="btn btn-primary width-60 ">
+                        <i className="fas fa-edit"></i>
+                      </a>
+                      <a className="btn btn-primary btn-danger m-r-2">
+                        <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                      </a>
+                    </td>
+                  </tr>                  
                   <tr>
                     <td>10 3/4</td>
                     <td>J-55</td>
@@ -55,9 +69,9 @@ const IndexMacroperas = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td>10 3/4</td>
+                    <td>9 5/8</td>
                     <td>J-55</td>
-                    <td>65</td>
+                    <td>36</td>
                     <td>BCN</td>
                     <td className="with-btn" nowrap="">
                       <a href="#" className="btn btn-primary width-60 ">
@@ -69,9 +83,9 @@ const IndexMacroperas = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td>10 3/4</td>
-                    <td>J-55</td>
-                    <td>65</td>
+                    <td>7 5/8</td>
+                    <td>P-110</td>
+                    <td>29</td>
                     <td>BCN</td>
                     <td className="with-btn" nowrap="">
                       <a href="#" className="btn btn-primary width-60 ">
@@ -83,9 +97,37 @@ const IndexMacroperas = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td>10 3/4</td>
-                    <td>J-55</td>
-                    <td>65</td>
+                    <td>7</td>
+                    <td>P-110</td>
+                    <td>26</td>
+                    <td>BCN</td>
+                    <td className="with-btn" nowrap="">
+                      <a href="#" className="btn btn-primary width-60 ">
+                        <i className="fas fa-edit"></i>
+                      </a>
+                      <a className="btn btn-primary btn-danger m-r-2">
+                        <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4 1/2</td>
+                    <td>P-110</td>
+                    <td>13.5</td>
+                    <td>BCN</td>
+                    <td className="with-btn" nowrap="">
+                      <a href="#" className="btn btn-primary width-60 ">
+                        <i className="fas fa-edit"></i>
+                      </a>
+                      <a className="btn btn-primary btn-danger m-r-2">
+                        <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4 1/2</td>
+                    <td>N-80</td>
+                    <td>13.5</td>
                     <td>BCN</td>
                     <td className="with-btn" nowrap="">
                       <a href="#" className="btn btn-primary width-60 ">

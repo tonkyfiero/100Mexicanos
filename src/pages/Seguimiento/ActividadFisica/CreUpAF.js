@@ -29,7 +29,8 @@ const CreUpAF = () => {
 
 
   return (
-    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+    <div className="row justify-content-md-center">
+    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
       <div className="section-block" id="basicform">
         <h3 className="section-title">Crear Intervencion</h3>
         <p>Formulario para crear intervenciones</p>
@@ -37,8 +38,7 @@ const CreUpAF = () => {
       <div className="card">
         <h5 className="card-header">Formulario Intervencion</h5>
         <div className="card-body">
-          <form>
-
+          <form onSubmit={() => alert('Pozo Creado')}>
           <div class="form-group">
               <label for="selectIntervencion">Intervencion</label>
               <select class="form-control" id="selectIntervencion">
@@ -66,10 +66,13 @@ const CreUpAF = () => {
               <label for="selectCampo">Pozo</label>
               <select class="form-control" id="selectGrado">
                 <option value="0">Seleccione Pozo</option>
-                <option>Agua Fria 1252</option>
-                <option>Tajin 525</option>
-                <option>Presidente Aleman 1234</option>
-                <option>Furbero 1236</option>
+                <option>Coapechaca 448</option>
+                <option>Coapechaca 4980</option>
+                <option>Coapechaca 1045</option>
+                <option>Coapechaca 3930</option>
+                <option>Coapechaca 1086</option>
+                <option>Coapechaca 5570</option>
+                <option>Coapechaca 1027A</option>
               </select>
             </div>
 
@@ -113,33 +116,14 @@ const CreUpAF = () => {
               <label for="inpNorte" className="col-form-label">
                 Norte (UTM)
               </label>
-              <input id="inpNorte" type="number" className="form-control" />
+              <input id="inpNorte" type="text" className="form-control" />
             </div>
             <div className="form-group">
               <label for="inpEste" className="col-form-label">
                 Este (UTM)
               </label>
-              <input id="inpEste" type="number" className="form-control" />
+              <input id="inpEste" type="text" className="form-control" />
             </div>            
-
-            {/* <div className="form-group">
-              <h6>Seleccione el Tipo de Operacion</h6>
-              <label class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" />
-                <span class="custom-control-label">Perforacion</span>
-              </label>
-              <label class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" />
-                <span class="custom-control-label">Terminacion</span>
-              </label>
-              <label class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" />
-                <span class="custom-control-label">Reparacion</span>
-              </label>
-            </div> */}
-
-
-
             <div className="form-group">
               <label for="inpFecha" className="col-form-label" >
                 Fecha Inicio Movimiento
@@ -169,6 +153,7 @@ const CreUpAF = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };

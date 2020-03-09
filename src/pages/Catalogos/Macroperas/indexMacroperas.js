@@ -38,7 +38,7 @@ const IndexMacroperas = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Furbero 1552</td>
+                    <td>Coapchaca 1065</td>
                     <td className="with-btn" nowrap="">
                       <a href="#" className="btn btn-primary width-60 ">
                         <i className="fas fa-edit"></i>
@@ -49,7 +49,29 @@ const IndexMacroperas = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td>Coapechaca 1000</td>
+                    <td>Coapchaca 438</td>
+                    <td className="with-btn" nowrap="">
+                      <a href="#" className="btn btn-primary width-60 ">
+                        <i className="fas fa-edit"></i>
+                      </a>
+                      <a className="btn btn-primary btn-danger m-r-2">
+                        <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Coapchaca 595</td>
+                    <td className="with-btn" nowrap="">
+                      <a href="#" className="btn btn-primary width-60 ">
+                        <i className="fas fa-edit"></i>
+                      </a>
+                      <a className="btn btn-primary btn-danger m-r-2">
+                        <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Coapchaca 1770</td>
                     <td className="with-btn" nowrap="">
                       <a href="#" className="btn btn-primary width-60 ">
                         <i className="fas fa-edit"></i>

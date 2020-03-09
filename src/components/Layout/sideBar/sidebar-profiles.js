@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Cover from '../../../assets/imagenes/descarga.jfif';
 import goku from '../../../assets/imagenes/2-goku.jpeg';
-import User from '../../../assets/imagenes/user/user-2.jpg';
+import User from '../../../assets/imagenes/user/ucruzg.jpeg'
 
 const useStyles = makeStyles({
   nav: {

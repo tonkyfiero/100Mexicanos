@@ -39,8 +39,8 @@ const IndexMacroperas = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>Furbero 1552</td>                  
-                  <td>Furbero 1500</td>
+                  <td>Coapechaca 1045</td>                  
+                  <td>Coapechaca 1065</td>
                   <td className="with-btn" nowrap="">
                     <a href="#" className="btn btn-primary width-60 ">
                       <i className="fas fa-edit"></i>
@@ -49,7 +49,91 @@ const IndexMacroperas = () => {
                       <i className="fas fa-trash" style={{ color: 'white' }}></i>
                     </a>
                   </td>
-                </tr>                
+                </tr>        
+                <tr>
+                  <td>Coapechaca 1086</td>                  
+                  <td>Coapechaca 1065</td>
+                  <td className="with-btn" nowrap="">
+                    <a href="#" className="btn btn-primary width-60 ">
+                      <i className="fas fa-edit"></i>
+                    </a>
+                    <a className="btn btn-primary btn-danger m-r-2">
+                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                    </a>
+                  </td>
+                </tr>    
+                <tr>
+                  <td>Coapechaca 1027A</td>                  
+                  <td>Coapechaca 1065</td>
+                  <td className="with-btn" nowrap="">
+                    <a href="#" className="btn btn-primary width-60 ">
+                      <i className="fas fa-edit"></i>
+                    </a>
+                    <a className="btn btn-primary btn-danger m-r-2">
+                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Coapechaca 4980</td>                  
+                  <td>Coapechaca 438</td>
+                  <td className="with-btn" nowrap="">
+                    <a href="#" className="btn btn-primary width-60 ">
+                      <i className="fas fa-edit"></i>
+                    </a>
+                    <a className="btn btn-primary btn-danger m-r-2">
+                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                    </a>
+                  </td>
+                </tr>      
+                <tr>
+                  <td>Coapechaca 448</td>                  
+                  <td>Coapechaca 438</td>
+                  <td className="with-btn" nowrap="">
+                    <a href="#" className="btn btn-primary width-60 ">
+                      <i className="fas fa-edit"></i>
+                    </a>
+                    <a className="btn btn-primary btn-danger m-r-2">
+                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                    </a>
+                  </td>
+                </tr>       
+                <tr>
+                  <td>Coapechaca 5570</td>                  
+                  <td>Coapechaca 438</td>
+                  <td className="with-btn" nowrap="">
+                    <a href="#" className="btn btn-primary width-60 ">
+                      <i className="fas fa-edit"></i>
+                    </a>
+                    <a className="btn btn-primary btn-danger m-r-2">
+                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                    </a>
+                  </td>
+                </tr>    
+                <tr>
+                  <td>Coapechaca 1930</td>                  
+                  <td>Coapechaca 1770</td>
+                  <td className="with-btn" nowrap="">
+                    <a href="#" className="btn btn-primary width-60 ">
+                      <i className="fas fa-edit"></i>
+                    </a>
+                    <a className="btn btn-primary btn-danger m-r-2">
+                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                    </a>
+                  </td>
+                </tr>      
+                <tr>
+                  <td>Coapechaca 3930</td>                  
+                  <td>Coapechaca 595</td>
+                  <td className="with-btn" nowrap="">
+                    <a href="#" className="btn btn-primary width-60 ">
+                      <i className="fas fa-edit"></i>
+                    </a>
+                    <a className="btn btn-primary btn-danger m-r-2">
+                      <i className="fas fa-trash" style={{ color: 'white' }}></i>
+                    </a>
+                  </td>
+                </tr>                                
               </tbody>
             </table>
           </div>
