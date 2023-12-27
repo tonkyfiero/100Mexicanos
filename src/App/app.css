@@ -1,38 +1,281 @@
-html,
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-  background-color: #d9e0e7;
-  box-sizing: border-box;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
 }
 
-*,
-:after,
-:before {
-  box-sizing: border-box;
+body{
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+.contenedor {
+    width: 100%;
+    height: 100vh;   
+    background-color: #000; 
+    /* display: grid;
+    grid-template-columns: auto minmax(0px,0px) ;
+    grid-template-rows: 60px 60px 60px auto;
+    grid-template-areas:  "titulo titulo"
+                          "header header"  
+                          "fechas solicitudes"
+                          "main solicitudes"  ; */
 }
 
 
-@media screen and (max-width: 992px) {
-  body {
-    background-color: blue;
+li {    
+    margin-bottom: 15px;
+    font-size: 18px;
+    list-style-type: none;
+    cursor: pointer;
   }
+
+
+
+
+/**************** TITULO ****************/
+.titulo {
+    grid-area: titulo;
+    padding-top: 15px;
+    
+}
+
+.titulo .nombre-pos {
+    display: flex;    
+    justify-content: center;    
+}
+
+.titulo .nombre-pos h2{
+    border: 1px solid black;                
+    min-width: 60%;
+    padding: 0 15px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.titulo .nombre-pos button{
+    height: 35px;
+    border: 1px solid #ccc;
+    border-left: none;
+    color: #545454;
+    background: #f8f8f8;
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+/**********header **************/
+
+.header {
+    grid-area: header;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap:20px;
+    grid-template-areas: "estatus busqueda vistas";
+}
+
+.header .estatus {
+    grid-area: estatus;
+    display: flex;
+}
+
+.header .barra-busqueda {
+    grid-area: busqueda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header .barra-busqueda input {
+    min-width: 60%;
+    padding: 0 15px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}   
+
+
+.header .barra-busqueda button {
+    height: 35px;
+    border: 1px solid #ccc;
+    border-left: none;
+    color: #545454;
+    background: #f8f8f8;
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+.header .barra-busqueda button:hover {
+    background: #f5f5f5;
+}
+
+.header .vistas{
+    grid-area: vistas;
+    display: flex;
+}
+
+.header .vistas button{
+    border:none;
+    padding: 7px 12px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    cursor: pointer;    
+    font-size: 18px;
+}
+
+.header .vistas button:hover{
+    background: #e7e7e7;
 }
 
 
-.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
-  position: absolute;
-  direction: ltr;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  pointer-events: none;
-  visibility: hidden;
-  z-index: -1;
+
+/*******sectores *******************/
+
+.sectores {
+    grid-area: sectores;
 }
 
+
+
+/*---------------------------fechas -----------------*/
+.fechas{
+    grid-area: fechas;
+    background:#4E232E;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    /* grid-template-areas: "f1 f2 f3 f4 f5 f6 f7"; */
+    align-items: center;    
+}
+
+.fechas > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/********************espacio ***/
+
+.espacio{
+    grid-area: espacio;
+}
+
+/*------------------Main -------------------------------*/
+
+.main{
+    grid-area: main;
+    display: grid;
+    /* grid-template-rows: repeat(3, minmax(200px, 1fr)) 100px;;     */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    grid-template-columns: repeat(7,1fr);   
+   
+}
+
+
+
+.main .colFecha{        
+    border-right: 1px solid #f7f2f2;     
+}
+
+
+
+/*--------------Props------------------*/
+
+.solicitudes{
+    grid-area: solicitudes;    
+    margin-left: 10px;   
+    display: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+
+}
+
+.solicitudes.active{
+    display: block;
+   
+}
+.int1{
+    padding: 2px 5px;
+    background: #e2d8b3fa;    
+    border: 1px solid #e2d8b3fa;    
+    width: auto;
+    border-radius: 4px;
+    align-items: center;
+    margin: 10px 10px;
+    color: #4E232E;   
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.int1 .detalle{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 3px;
+}
+
+.pozo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.etGas>span{
+    display: inline-block;    
+    width: 60px;
+    padding: 5px 12px;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    color: #212529;
+    background-color: #ffc107;
+}
+
+.etCond>span{
+    display: inline-block;
+    width: 60px;
+    padding: 5px 12px;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #28a745;
+}
+
+
+.heighFull{
+    height: 75vh;
+    overflow-y: auto;
+  }
+
+
+  .highlight-region {
+    background-color: yellow;
+}

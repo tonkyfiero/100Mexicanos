@@ -1,63 +1,26 @@
 import React, { Component } from 'react';
-import { PageSettings } from '../config/page-settings';
+import { useState } from 'react';
+import ControladorTurno from '../components/controladorTurno';
+import Encuesta from '../components/encuesta';
+import PuntosGenerales from '../components/puntosGenerales';
+import PuntosJudador1 from '../components/puntosJugador1';
+import PuntosJudador2 from '../components/puntosJugador2';
 
-///acciones redux
+import './app.css';
 
-import { getDataIni } from '../redux/actions/FetchFunctions';
-
-//css
-import './App.css';
-
-//componentes
-import Header from '../components/Layout/header/header';
-import Sidebar from '../components/Layout/sideBar/sidebar';
-import Contenido from '../components/Layout/contenido/contenido';
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleViewSideBar = () => {
-      this.setState((state) => ({
-        viewSidebar: !this.state.viewSidebar,
-      }));
-    };
-
-    this.handlePrueba = (valor) => {
-      this.setState((state) => ({
-        prueba: valor,
-      }));
-    };
-
-    this.setIdPozoDireccional = (valor) => {
-      this.setState((state) => ({
-        idPozoDireccional: valor,
-      }));
-    };
-
-    this.state = {
-      prueba: true,
-      idPozoDireccional:0,
-      viewSidebar: false,
-      handleViewSideBar: this.handleViewSideBar,
-      funcionPrueba: this.handlePrueba,
-      setIdPozoDireccional:this.setIdPozoDireccional,
-      height: window.innerHeight,
-      width: window.innerWidth,
-    };
-  }
-
-  render() {
-    return (
-      <PageSettings.Provider value={this.state}>
-        <div style={{height:'100%'}}>
-          <Header />
-          <Sidebar />
-          <Contenido />
+const App = () => {
+  return (
+    <div id="contenedor" className="contenedor">
+      <div style={{ display: 'flex', flexDirection: 'column',height:"100%" }}>
+        <PuntosGenerales />
+        <div style={{ display: 'flex',height:"70%" }}>
+          <PuntosJudador1 />
+          <Encuesta />
+          <PuntosJudador2 />
         </div>
-      </PageSettings.Provider>
-    );
-  }
-}
-
+        <ControladorTurno/>
+      </div>
+    </div>
+  );
+};
 export default App;

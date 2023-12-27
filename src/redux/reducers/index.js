@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { showSidebar } from '../reducers/UIReducers'
+import {puntajes} from './puntuacionReducer'
 
 export default combineReducers({
-    showSidebar:showSidebar
+    Puntajes:puntajes    
 })
